@@ -1,14 +1,14 @@
-import ReviewCard from "../Components/reviewCard";
+import ReviewCard from "../../Components/reviewCard";
 
-import image1 from "../assets/reviewImg1.png";
-import image2 from "../assets/reviewImg2.png";
-import image3 from "../assets/reviewImg3.png";
-import image4 from "../assets/reviewImg4.png";
-import image5 from "../assets/reviewImg5.png";
-import image6 from "../assets/reviewImg6.png";
-import image7 from "../assets/reviewImg7.png";
-import image8 from "../assets/reviewImg8.png";
-import image9 from "../assets/reviewImg9.png";
+import image1 from "../../assets/reviewImg1.png";
+import image2 from "../../assets/reviewImg2.png";
+import image3 from "../../assets/reviewImg3.png";
+import image4 from "../../assets/reviewImg4.png";
+import image5 from "../../assets/reviewImg5.png";
+import image6 from "../../assets/reviewImg6.png";
+import image7 from "../../assets/reviewImg7.png";
+import image8 from "../../assets/reviewImg8.png";
+import image9 from "../../assets/reviewImg9.png";
 
 export type ReviewsType = {
   name: string;

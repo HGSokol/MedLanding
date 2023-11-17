@@ -1,6 +1,9 @@
-import { useState } from "react";
-import TeamCard from "../Components/teamCard";
-import image1 from "../assets/teamFrame1.png";
+import { useContext, useState } from "react";
+import TeamCard from "../../Components/teamCard";
+import image1 from "../../assets/teamFrame1.png";
+import image2 from "../../assets/teamFrame2.png";
+import image3 from "../../assets/teamFrame3.png";
+import { AppContext } from "../../App";
 
 export type TeamCardType = {
   image: string;
@@ -10,62 +13,62 @@ export type TeamCardType = {
 
 const teamData: TeamCardType[] = [
   {
-    name: "1Деконский Павел Николаевич",
+    name: "Деконский Павел Николаевич",
     position: "Врач уролог, первая квалификация",
     image: image1,
   },
   {
-    name: "2Деконский Павел Николаевич",
+    name: "Власова Ольга Николаевна",
+    position: "Акушер-гинеколог, репродуктолог",
+    image: image2,
+  },
+  {
+    name: "Антипенко Инна Игоревна",
+    position: "Акушер-гинеколог, репродуктолог",
+    image: image3,
+  },
+  {
+    name: "Маликова Анна Петровна",
     position: "Врач уролог, первая квалификация",
     image: image1,
   },
   {
-    name: "3Деконский Павел Николаевич",
+    name: "Архипенко Инна Игоревна",
+    position: "Врач уролог, первая квалификация",
+    image: image2,
+  },
+  {
+    name: "Деконский Павел Николаевич",
+    position: "Врач уролог, первая квалификация",
+    image: image3,
+  },
+  {
+    name: "Деконский Павел Николаевич",
     position: "Врач уролог, первая квалификация",
     image: image1,
   },
   {
-    name: "4Деконский Павел Николаевич",
+    name: "Деконский Павел Николаевич",
     position: "Врач уролог, первая квалификация",
-    image: image1,
+    image: image2,
   },
   {
-    name: "5Деконский Павел Николаевич",
+    name: "Деконский Павел Николаевич",
     position: "Врач уролог, первая квалификация",
-    image: image1,
-  },
-  {
-    name: "6Деконский Павел Николаевич",
-    position: "Врач уролог, первая квалификация",
-    image: image1,
-  },
-  {
-    name: "7Деконский Павел Николаевич",
-    position: "Врач уролог, первая квалификация",
-    image: image1,
-  },
-  {
-    name: "8Деконский Павел Николаевич",
-    position: "Врач уролог, первая квалификация",
-    image: image1,
-  },
-  {
-    name: "9Деконский Павел Николаевич",
-    position: "Врач уролог, первая квалификация",
-    image: image1,
+    image: image3,
   },
 ];
 
 export default function Team() {
+  const { setActivePopup } = useContext(AppContext);
   const [currentSliderList, setCurrentSliderList] = useState<number>(0);
   const [range, setRange] = useState(0);
 
   function changeRange(signs: string) {
-    if (currentSliderList >= 2 && signs === "plus") {
-      setRange((prev) => prev + 1);
-    }
-    if (currentSliderList <= teamData.length - 4 && signs === "minus") {
-      setRange((prev) => prev - 1);
+    if (currentSliderList >= 2 && currentSliderList <= teamData.length - 3) {
+      signs === "plus"
+        ? setRange((prev) => prev + 1)
+        : setRange((prev) => prev - 1);
     }
   }
 
@@ -75,16 +78,13 @@ export default function Team() {
 
       changeRange("minus");
     }
-
-    console.log(range);
   };
   const right = () => {
-    if (currentSliderList <= teamData.length - 3) {
+    if (currentSliderList <= teamData.length - 2) {
       setCurrentSliderList((prev) => prev + 1);
 
       changeRange("plus");
     }
-    console.log(range);
   };
 
   return (
@@ -102,7 +102,7 @@ export default function Team() {
         <div
           className="px-[25rem] mb-[40rem] flex flex-row w-max gap-[25rem]"
           style={{
-            transform: `translateX(-${range * 310}rem)`,
+            transform: `translateX(-${range * 320}rem)`,
           }}
         >
           {teamData.map((e, i) => {
@@ -114,6 +114,7 @@ export default function Team() {
                   image={e.image}
                   name={e.name}
                   position={e.position}
+                  setActivePopup={setActivePopup}
                 />
               </div>
             );
