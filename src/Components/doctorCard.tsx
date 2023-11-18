@@ -8,7 +8,7 @@ export default function DoctorCard({ image, name, position }: TeamCardType) {
 	return (
 		<div className="relative group/doc flex flex-col gap-[18rem]">
 			<Link to={`/doctors/${name}`}>
-				<div>
+				<div className="mb-[18rem]">
 					<img className="w-[292rem] h-[326rem]" src={image} alt={name} />
 				</div>
 				<div className="flex flex-col gap-[6rem] text-center">

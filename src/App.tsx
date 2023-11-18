@@ -1,10 +1,12 @@
 import { createContext, Dispatch, lazy, SetStateAction, Suspense, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Doctor from './Pages/Doctor';
 
 const Home = lazy(() => import('./Pages/Home'));
 const Price = lazy(() => import('./Pages/Price'));
 const Doctors = lazy(() => import('./Pages/Doctors'));
+const Doctor = lazy(() => import('./Pages/Doctor'));
+const Clinic = lazy(() => import('./Pages/Clinic'));
+const Contacts = lazy(() => import('./Pages/Contacts'));
 const NotFound = lazy(() => import('./Pages/NotFound'));
 
 type ProfileContext = {
@@ -34,6 +36,8 @@ export default function App() {
 					<Route path="/price" element={<Price />} />
 					<Route path="/doctors" element={<Doctors />} />
 					<Route path="/doctors/:name" element={<Doctor />} />
+					<Route path="/clinic" element={<Clinic />} />
+					<Route path="/contacts/" element={<Contacts />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Suspense>
