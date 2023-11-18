@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
+import { teamData } from '../Layouts/Home/Team';
+import { useEffect } from 'react';
 
 type BreadcrumbsType = {
-	path: string;
+	path?: string;
 	name: string;
 };
+
 const data: BreadcrumbsType[] = [
 	{
 		path: 'price',
@@ -24,19 +27,17 @@ const data: BreadcrumbsType[] = [
 ];
 
 export default function Breadcrumbs() {
-	const numberOfPath = window.location.pathname.split('/').filter((e) => e !== '').length;
+	const navigate = useNavigate();
+	const { name } = useParams();
+	const doctorsName = teamData.map(({ name }) => name);
+	const ff = doctorsName.includes(name!);
+
+	useEffect(() => {
+		if (name && !ff) return navigate('/404');
+	});
 
 	const secondParams = window.location.pathname.split('/').filter((e) => e !== '')[0];
-
 	const secPath = data.filter((e) => e.path === secondParams)[0].name;
-
-	let thirdParams: string;
-	let thirdPath: string;
-	if (numberOfPath > 1) {
-		thirdParams = window.location.pathname.split('/').filter((e) => e !== '')[1];
-
-		thirdPath = data.filter((e) => e.path === thirdParams)[0].name;
-	}
 
 	return (
 		<div className="px-[95rem] pt-[30rem] flex flex-row gap-[10rem] text-[20rem] mb-[53rem]">
@@ -47,12 +48,10 @@ export default function Breadcrumbs() {
 			<Link to={`/${secondParams}`} className="">
 				{secPath}
 			</Link>
-			{numberOfPath > 1 && (
+			{ff && (
 				<div className="flex flex-row gap-[10rem] text-[20rem]">
 					<div>/</div>
-					<Link to={`/${thirdParams!}`} className="">
-						{thirdPath!}
-					</Link>
+					<div>{name}</div>
 				</div>
 			)}
 		</div>

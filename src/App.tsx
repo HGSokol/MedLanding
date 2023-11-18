@@ -1,5 +1,6 @@
 import { createContext, Dispatch, lazy, SetStateAction, Suspense, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Doctor from './Pages/Doctor';
 
 const Home = lazy(() => import('./Pages/Home'));
 const Price = lazy(() => import('./Pages/Price'));
@@ -32,6 +33,7 @@ export default function App() {
 					<Route path="/" element={<Home />} />
 					<Route path="/price" element={<Price />} />
 					<Route path="/doctors" element={<Doctors />} />
+					<Route path="/doctors/:name" element={<Doctor />} />
 					<Route path="*" element={<NotFound />} />
 				</Routes>
 			</Suspense>
