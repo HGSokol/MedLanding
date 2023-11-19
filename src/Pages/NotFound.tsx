@@ -4,12 +4,12 @@ import Footer from "../Layouts/Home/Footer";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col justify-between min-h-[100vh] font-mont bg-[#EDF0F4]">
+    <div className="relative flex flex-col justify-between min-h-[100vh] font-mont bg-[#EDF0F4]">
       <Header />
-      <main className="flex flex-row mb-[58rem] mt-[92rem] px-[102rem]">
-        <div className="mr-[110rem]">
+      <main className="flex flex-col items-center md:items-start md:flex-row mb-[58rem] mt-[92rem] px-[30rem] md:px-[102rem]">
+        <div className="md:mr-[110rem]">
           <svg
-            className="w-[467rem] h-[529rem]"
+            className="w-[270rem] h-[320rem] md:w-[467rem] md:h-[529rem]"
             width="467"
             height="529"
             viewBox="0 0 467 529"
@@ -146,11 +146,11 @@ export default function NotFound() {
             </defs>
           </svg>
         </div>
-        <div className="flex flex-col mt-[68rem]">
-          <div className="mb-[30rem] text-[#242E49] text-[56rem] font-bold leading-[160%]">
+        <div className="flex flex-col mt-[15rem] md:mt-[68rem] items-center md:items-start">
+          <div className="mb-[15rem] md:mb-[30rem] text-[#242E49] text-center md:text-start text-[32rem] md:text-[56rem] font-bold leading-[160%]">
             Ошибка 404
           </div>
-          <div className="w-[570rem] mb-[50rem] text-[#242E49] text-[16rem] font-normal leading-[160%]">
+          <div className="w-full text-center md:text-start md:w-[570rem] mb-[25rem] md:mb-[50rem] text-[#242E49] text-[16rem] font-normal leading-[160%]">
             Запрашиваемая страница не существует, или мы временно не можем ее
             найти. Пожалуйста, проверьте введенный URL или воспользуйтесь
             навигацией по сайту, чтобы найти интересующую вас информацию.

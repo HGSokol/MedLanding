@@ -32,7 +32,26 @@ body:has(#contactForm) {
   overflow: hidden;
 }
 
-@media screen and (min-width: 1024px) {
+/* burger menu */
+.hamburger {
+  width: 40rem;
+  height: 40rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  /* z-index: 10; */
+}
+
+.burger {
+  width: 40rem;
+  height: 5rem;
+  border-radius: 10px;
+  background-color: black;
+  transform-origin: 1px;
+  transition: all 0.2s linear;
+}
+
+@media screen and (min-width: 768px) {
   :root {
     font-size: calc(1vw / 14.4);
   }

@@ -20,7 +20,7 @@ export default function Home() {
       {activePopup && (
         <div
           id="contactForm"
-          className="h-[100vh] bg-slate-200 w-[100vw] grid items-center place-content-center z-[100] fixed bg-[#242E49CC]/[0.8]"
+          className="h-[100vh] w-[100vw] grid items-center place-content-center z-[100] fixed bg-[#242E49CC]/[0.8]"
         >
           <ContactFormPopup />
         </div>
@@ -42,7 +42,7 @@ export default function Home() {
                   cy="416.022"
                   r="26.0323"
                   stroke="white"
-                  stroke-opacity="0.1"
+                  strokeOpacity="0.1"
                   strokeWidth="40"
                 />
                 <circle
@@ -50,7 +50,7 @@ export default function Home() {
                   cy="416"
                   r="80"
                   stroke="white"
-                  stroke-opacity="0.1"
+                  strokeOpacity="0.1"
                   strokeWidth="40"
                 />
                 <circle
@@ -58,7 +58,7 @@ export default function Home() {
                   cy="415.5"
                   r="147.5"
                   stroke="white"
-                  stroke-opacity="0.1"
+                  strokeOpacity="0.1"
                   strokeWidth="40"
                 />
                 <circle
@@ -66,7 +66,7 @@ export default function Home() {
                   cy="416"
                   r="214"
                   stroke="white"
-                  stroke-opacity="0.1"
+                  strokeOpacity="0.1"
                   strokeWidth="40"
                 />
                 <circle
@@ -74,7 +74,7 @@ export default function Home() {
                   cy="415.5"
                   r="281.5"
                   stroke="white"
-                  stroke-opacity="0.1"
+                  strokeOpacity="0.1"
                   strokeWidth="40"
                 />
                 <circle
@@ -82,7 +82,7 @@ export default function Home() {
                   cy="416.5"
                   r="348.5"
                   stroke="white"
-                  stroke-opacity="0.1"
+                  strokeOpacity="0.1"
                   strokeWidth="40"
                 />
                 <circle
@@ -90,7 +90,7 @@ export default function Home() {
                   cy="415.5"
                   r="415.5"
                   stroke="white"
-                  stroke-opacity="0.1"
+                  strokeOpacity="0.1"
                   strokeWidth="40"
                 />
               </svg>
