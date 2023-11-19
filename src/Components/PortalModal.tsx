@@ -1,5 +1,5 @@
-import ReactDOM from "react-dom";
 import { Dispatch, SetStateAction, useContext, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { AppContext } from "../App";
 
@@ -21,44 +21,32 @@ export default function PortalMenu({ isOpen, setIsOpen }: PortalMenu) {
   function closePopup(e: MouseEvent) {
     const target = e.target as HTMLButtonElement;
 
-    console.log(target);
-
     if (target.matches("#portalMenu")) {
       setIsOpen(false);
     }
   }
 
-  return ReactDOM.createPortal(
+  return createPortal(
     <div
       id="portalMenu"
-      className={`z-[100] md:hidden fixed top-0 w-full h-full duration-500 ${
+      className={`${
+        isOpen ? "z-[100]" : "z-[-1]"
+      } md:hidden fixed top-0 w-full h-full duration-500 ${
         isOpen ? "translate-x-0" : "-translate-x-[1000rem]"
       }`}
     >
       <div className="p-[25rem] w-[270rem] h-full bg-[#3563E9]">
-        <div className="flex flex-col gap-[30rem] text-[20rem] font-medium leading-[160%] text-[#FFF] duration-200 pb-[20rem] border-b-[1rem] border-[#FFF]/[0.5]">
-          <Link
-            to="/price"
-            className="z-[10] cursor-pointer hover:text-[#3563E9] duration-200"
-          >
+        <div className="flex flex-col gap-[15rem] text-[20rem] font-medium leading-[160%] text-[#FFF] duration-200 pb-[20rem] border-b-[1rem] border-[#FFF]/[0.5]">
+          <Link to="/services" className="hover:text-[#3563E9] duration-200">
             Услуги и цены
           </Link>
-          <Link
-            to="/doctors"
-            className="z-[10] cursor-pointer hover:text-[#3563E9] duration-200"
-          >
+          <Link to="/doctors" className="hover:text-[#3563E9] duration-200">
             Врачи
           </Link>
-          <Link
-            to="/clinic"
-            className="z-[10] cursor-pointer hover:text-[#3563E9] duration-200"
-          >
+          <Link to="/clinic" className="hover:text-[#3563E9] duration-200">
             Клиника
           </Link>
-          <Link
-            to="/contacts"
-            className="z-[10] cursor-pointer hover:text-[#3563E9] duration-200"
-          >
+          <Link to="/contacts" className="hover:text-[#3563E9] duration-200">
             Контакты
           </Link>
         </div>

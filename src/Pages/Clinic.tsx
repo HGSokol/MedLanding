@@ -30,7 +30,7 @@ export default function Clinic() {
         title="Наша клиника “Клиника”"
         text="Здесь вы найдете полезную информацию о нашей клинике. Узнайте больше о том, как мы можем заботиться о вашем здоровье и благополучии"
       />
-      <div className="px-[95rem] mb-[70rem]">
+      <div className="px-[30rem] md:px-[95rem] mb-[30rem] md:mb-[70rem]">
         <ClinicImage />
       </div>
       <History />

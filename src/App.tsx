@@ -9,7 +9,7 @@ import {
 import { Route, Routes } from "react-router-dom";
 
 const Home = lazy(() => import("./Pages/Home"));
-const Price = lazy(() => import("./Pages/Price"));
+const Services = lazy(() => import("./Pages/Services"));
 const Doctors = lazy(() => import("./Pages/Doctors"));
 const Doctor = lazy(() => import("./Pages/Doctor"));
 const Clinic = lazy(() => import("./Pages/Clinic"));
@@ -41,7 +41,7 @@ export default function App() {
       <Suspense fallback={<p>Loading...</p>}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/price" element={<Price />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/doctors" element={<Doctors />} />
           <Route path="/doctors/:name" element={<Doctor />} />
           <Route path="/clinic" element={<Clinic />} />

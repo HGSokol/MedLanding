@@ -16,10 +16,10 @@ export default function Footer() {
         </div>
         <div className="flex flex-row justify-between md:justify-start md:gap-[133rem] pt-[50rem] md:pt-[30rem]">
           <div className="flex flex-col gap-[20rem] text-[16rem] text-[#FFF] leading-[160%]">
-            <Link to="/price" className="cursor-pointer hover:underline">
+            <Link to="/services" className="cursor-pointer hover:underline">
               Услуги
             </Link>
-            <Link to="/price" className="cursor-pointer hover:underline">
+            <Link to="/services" className="cursor-pointer hover:underline">
               Цены
             </Link>
             <Link to="/doctors" className="cursor-pointer hover:underline">

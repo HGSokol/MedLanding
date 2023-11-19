@@ -1,14 +1,14 @@
 import { useContext, useState } from "react";
-import Header from "../Layouts/Home/Header";
-import Footer from "../Layouts/Home/Footer";
-import Breadcrumbs from "../Components/Breadcrumbs";
-import ContactFormPopup from "../Components/ContactFormPopup";
 import { AppContext } from "../App";
 import usePopup from "../hooks/usePopup";
-import DoctorsTitle from "../Layouts/Doctors/DoctorsTitle";
+import Breadcrumbs from "../Components/Breadcrumbs";
+import ContactFormPopup from "../Components/ContactFormPopup";
 import Tab from "../Components/Tab";
 import DoctorCard from "../Components/doctorCard";
 import { teamData } from "../Components/data/DoctorsData";
+import Header from "../Layouts/Home/Header";
+import Footer from "../Layouts/Home/Footer";
+import DoctorsTitle from "../Layouts/Doctors/DoctorsTitle";
 
 type DoctorsType = {
   name: string;
@@ -41,7 +41,7 @@ export default function Doctors() {
       <Header />
       <Breadcrumbs />
       <DoctorsTitle />
-      <div className="px-[95rem] flex flex-row gap-[10rem] mb-[60rem]">
+      <div className="px-[30rem] md:px-[95rem] flex flex-row flex-wrap gap-[10rem] mb-[30rem] md:mb-[60rem]">
         {dataTabs.map((e, i) => {
           const current = currentTab === e.name;
           return (
@@ -51,7 +51,7 @@ export default function Doctors() {
           );
         })}
       </div>
-      <div className="px-[95rem] flex flex-row flex-wrap gap-[25rem] mb-[100rem]">
+      <div className="px-[30rem] md:px-[95rem] flex flex-row flex-wrap gap-[25rem] mb-[30rem] md:mb-[100rem]">
         {teamData
           .filter((e) => {
             if (currentTab === "Все врачи") return e;
@@ -59,7 +59,7 @@ export default function Doctors() {
           })
           .map((e, i) => {
             return (
-              <div key={i} className="w-[293rem]">
+              <div key={i} className="w-full md:w-[293rem]">
                 <DoctorCard
                   name={e.name}
                   position={e.position}

@@ -44,7 +44,7 @@ const data: ServiceCardType[] = [
   },
 ];
 
-export default function Services() {
+export default function Service() {
   return (
     <div className="relative  px-[95rem] pt-[90rem] flex flex-col gap-[46rem] mb-[150rem]">
       <div className="w-[756rem] text-[36rem] font-bold leading-[56rem] tracking-[-0.72rem] text-[#242E49]">

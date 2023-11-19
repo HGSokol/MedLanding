@@ -8,26 +8,23 @@ export default function Form() {
       <input
         placeholder="Имя*"
         type="text"
-        className="mb-[24rem] text-[16rem] font-normal leading-[160%] outline-none w-full h-[56rem] rounded-[8rem] px-[16rem] py-[8rem]"
+        className="mb-[12rem] md:mb-[24rem] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]"
       />
       <input
         placeholder="Телефон*"
         type="text"
-        className="mb-[28rem] text-[16rem] font-normal leading-[160%] outline-none w-full h-[56rem] rounded-[8rem] px-[16rem] py-[8rem]"
+        className="mb-[16rem] md:mb-[28rem] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]"
       />
-      <div className="flex flex-row gap-[12rem] mb-[28rem]">
+      <div className="flex flex-row gap-[12rem] mb-[16rem] md:mb-[28rem]">
         <div
           onClick={() => setCheckbox((prev) => !prev)}
-          className={`mr- cursor-pointer w-[20rem] h-[20rem] flex items-center justify-center rounded-[4rem] 
-          ${
-            checkbox ? "bg-[#3563E9]" : "bg-white"
-            // : "bg-[#ff25250d] border-[0.3rem] border-[#FF2525]"
-          }`}
+          className={`mr- cursor-pointer w-[16rem] md:w-[20rem] h-[16rem] md:h-[20rem] flex items-center justify-center rounded-[4rem] 
+          ${checkbox ? "bg-[#3563E9]" : "bg-white"}`}
         >
           {checkbox && (
             <div id="checkbox">
               <svg
-                className="w-[12rem] h-[12rem]"
+                className="w-[8rem] h-[8rem] md:w-[12rem] md:h-[12rem]"
                 width="12"
                 height="12"
                 viewBox="0 0 12 12"
@@ -42,12 +39,12 @@ export default function Form() {
             </div>
           )}
         </div>
-        <div className="w-[450rem] text-[12rem] font-normal leading-[160%]">
+        <div className="w-[calc(90%-4rem)] md:w-[450rem] text-[10rem] md:text-[12rem] font-normal leading-[160%]">
           Нажимая кнопку «Записаться на прием», я даю согласие на обработку моих
           персональных данных.
         </div>
       </div>
-      <div className="cursor-pointer w-full h-[56rem] px-[20rem] flex items-center justify-center duration-200 bg-[#3563E9] hover:bg-[#1941B9] rounded-[8rem] text-[16rem] text-[#FFF] font-semibold leading-[160%] ">
+      <div className="cursor-pointer w-full h-[40rem] md:h-[56rem] px-[20rem] flex items-center justify-center duration-200 bg-[#3563E9] hover:bg-[#1941B9] rounded-[8rem] text-[12rem] md:text-[16rem] text-[#FFF] font-semibold leading-[160%] ">
         Записаться на прием
       </div>
     </div>

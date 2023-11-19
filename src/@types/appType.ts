@@ -11,3 +11,12 @@ export type TeamCardType = {
   specialization: string;
   training: TrainingType[];
 };
+
+export type ServiceType = {
+  serviceName: string;
+  price: string;
+};
+export type DataServicesType = {
+  name: string;
+  services: ServiceType[];
+};

@@ -1,13 +1,13 @@
+import { DataServicesType } from "../../@types/appType";
 import ServiceTab from "../../Components/serviceTab";
-import { DataServicesType } from "../../Pages/Price";
 
 export default function PriceInfo({ name, services }: DataServicesType) {
   return (
-    <div className="px-[95rem]">
-      <div className="mb-[20rem] text-[26rem] font-semibold leading-[56rem] tracking-[-0.52rem]">
+    <div className="px-[30rem] md:px-[95rem]">
+      <div className="mb-[12rem] md:mb-[20rem] text-[20rem] md:text-[26rem] font-semibold leading-[160%] md:leading-[56rem] md:tracking-[-0.52rem]">
         {name}
       </div>
-      <div className="flex flex-col gap-[16rem]">
+      <div className="flex flex-col gap-[12rem] md:gap-[16rem]">
         {services.map((e, i) => {
           return (
             <div key={i}>

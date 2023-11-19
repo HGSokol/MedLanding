@@ -2,11 +2,11 @@ import { useContext } from "react";
 import { AppContext } from "../App";
 import Breadcrumbs from "../Components/Breadcrumbs";
 import ContactFormPopup from "../Components/ContactFormPopup";
+import Title from "../Components/Titile";
+import Address from "../Components/Address";
 import Footer from "../Layouts/Home/Footer";
 import Header from "../Layouts/Home/Header";
 import usePopup from "../hooks/usePopup";
-import Title from "../Components/Titile";
-import Address from "../Components/Address";
 
 export default function Contacts() {
   const { activePopup } = useContext(AppContext);
@@ -28,7 +28,7 @@ export default function Contacts() {
         title="Контактные данные"
         text="Вы всегда можете нас найти и связаться с нами. Мы готовы ответить на ваши вопросы, поделиться информацией и оказать медицинскую помощь"
       />
-      <Address height={"573"} />
+      <Address height={window.innerWidth >= 786 ? "573" : "300"} />
       <Footer />
     </div>
   );

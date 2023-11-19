@@ -4,21 +4,20 @@ import Form from "./Form";
 
 export default function ContactFormPopup() {
   const { setActivePopup } = useContext(AppContext);
-  // const [checkbox, setCheckbox] = useState(false);
 
   return (
-    <div className="relative w-[600rem] h-[538rem] bg-[#F6F7F9] rounded-[20rem] p-[50rem] text-[#242E49] flex flex-col">
-      <div className="text-center text-[30rem] font-bold leading-[56rem] tracking-[-0.6rem] mb-[6rem]">
+    <div className="relative mx-[10rem] w-[calc(100%-20rem)] md:w-[600rem] h-max md:h-[538rem] bg-[#F6F7F9] rounded-[12rem] md:rounded-[20rem] p-[30rem] md:p-[50rem] text-[#242E49] flex flex-col">
+      <div className="text-center text-[22rem] md:text-[30rem] font-bold leading-[160%] md:leading-[56rem] tracking-[-0.6rem] mb-[6rem]">
         Запись на прием
       </div>
-      <div className="text-center text-[16rem] font-medium leading-[160%] mb-[38rem]">
+      <div className="text-center text-[12rem] md:text-[16rem] font-medium leading-[160%] mb-[20rem] md:mb-[38rem]">
         Оставьте ваши контактные данные и наш менеджер свяжется с вами в
         ближайшее время
       </div>
       <Form />
       <div
         onClick={() => setActivePopup(false)}
-        className="cursor-pointer absolute top-[30rem] right-[30rem]"
+        className="cursor-pointer absolute top-[15rem] md:top-[20rem] right-[20rem] md:right-[30rem]"
       >
         <svg
           className="w-[30rem] h-[30rem]"

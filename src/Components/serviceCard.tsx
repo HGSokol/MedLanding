@@ -1,5 +1,5 @@
 import LinkButton from "./linkButton";
-import { ServiceCardType } from "../Layouts/Home/Services";
+import { ServiceCardType } from "../Layouts/Home/Service";
 
 export default function ServiceCard({
   title,

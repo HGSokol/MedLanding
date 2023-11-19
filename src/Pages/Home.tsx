@@ -1,16 +1,15 @@
+import { useContext } from "react";
+import { AppContext } from "../App";
+import usePopup from "../hooks/usePopup";
+import ContactFormPopup from "../Components/ContactFormPopup";
 import Header from "../Layouts/Home/Header";
 import Preview from "../Layouts/Home/Preview";
-import Services from "../Layouts/Home/Services";
+import Service from "../Layouts/Home/Service";
 import Footer from "../Layouts/Home/Footer";
-
 import Clinic from "../Layouts/Home/Clinic";
 import Reviews from "../Layouts/Home/Reviews";
 import Team from "../Layouts/Home/Team";
 import Contacts from "../Layouts/Home/Contacts";
-import { useContext } from "react";
-import ContactFormPopup from "../Components/ContactFormPopup";
-import { AppContext } from "../App";
-import usePopup from "../hooks/usePopup";
 
 export default function Home() {
   const { activePopup } = useContext(AppContext);
@@ -101,7 +100,7 @@ export default function Home() {
         </div>
       </div>
       <main>
-        <Services />
+        <Service />
         <Clinic />
         <Reviews />
         <Team />

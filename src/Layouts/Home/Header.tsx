@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { AppContext } from "../../App";
 import { Link } from "react-router-dom";
+import { AppContext } from "../../App";
 import PortalModal from "../../Components/PortalModal";
 
 export default function Header() {
@@ -17,7 +17,7 @@ export default function Header() {
         </Link>
         <div className="hidden md:flex flex-row gap-[40rem] text-[16rem] font-medium leading-[160%] text-[#242E49] duration-200">
           <Link
-            to="/price"
+            to="/services"
             className="z-[10] cursor-pointer hover:text-[#3563E9] duration-200"
           >
             Услуги и цены
