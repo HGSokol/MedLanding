@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Footer() {
   return (
     <footer className="pt-[50rem] pb-[30rem] px-[95rem] w-full h-[340rem] bg-[#3563E9] flex flex-col gap-[72rem]">
@@ -14,13 +16,23 @@ export default function Footer() {
         </div>
         <div className="flex flex-row gap-[133rem] pt-[30rem]">
           <div className="flex flex-col gap-[20rem] text-[16rem] text-[#FFF] leading-[160%]">
-            <div className="cursor-pointer hover:underline">Услуги</div>
-            <div className="cursor-pointer hover:underline">Цены</div>
-            <div className="cursor-pointer hover:underline">Врачи</div>
+            <Link to="/price" className="cursor-pointer hover:underline">
+              Услуги
+            </Link>
+            <Link to="/price" className="cursor-pointer hover:underline">
+              Цены
+            </Link>
+            <Link to="/doctors" className="cursor-pointer hover:underline">
+              Врачи
+            </Link>
           </div>
           <div className="flex flex-col gap-[20rem] text-[16rem] text-[#FFF] leading-[160%]">
-            <div className="cursor-pointer hover:underline">Контакты</div>
-            <div className="cursor-pointer hover:underline">Клиника</div>
+            <Link to="/contacts" className="cursor-pointer hover:underline">
+              Контакты
+            </Link>
+            <Link to="/clinic" className="cursor-pointer hover:underline">
+              Клиника
+            </Link>
           </div>
         </div>
         <div className="flex flex-col gap-[22rem] pt-[30rem]">

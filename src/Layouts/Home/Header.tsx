@@ -46,7 +46,7 @@ export default function Header() {
         </div>
         <div
           onClick={() => setActivePopup(true)}
-          className="z-[10] text-[16rem] text-[white] flex items-center justify-center w-[230rem] h-[46rem] px-[20rem] bg-[#3563E9] rounded-[8rem] cursor-pointer"
+          className="z-[10] text-[16rem] text-[white] flex items-center justify-center w-[230rem] h-[46rem] px-[20rem] duration-200 bg-[#3563E9] hover:bg-[#1941B9] rounded-[8rem] cursor-pointer"
         >
           Записаться на прием
         </div>

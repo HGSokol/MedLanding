@@ -27,7 +27,7 @@ export default function ServiceCard({
       {image ? (
         <LinkButton />
       ) : (
-        <div className="w-[165rem] cursor-pointer flex flex-row items-center text-[#3563E9] text-[16rem] font-bold leading-[150%] tracking-[-0.32rem] gap-[10rem]">
+        <div className="w-[195rem] cursor-pointer flex flex-row items-center text-[#3563E9] text-[16rem] font-bold leading-[150%] tracking-[-0.32rem] duration-200 gap-[10rem] hover:gap-[20rem]">
           <div>Узнать больше</div>
           <div className="rotate-45">
             <svg
