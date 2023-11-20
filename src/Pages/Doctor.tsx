@@ -1,7 +1,6 @@
 import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { AppContext } from '../App';
-import usePopup from '../hooks/usePopup';
 import Breadcrumbs from '../Components/Breadcrumbs';
 import Address from '../Components/Address';
 import { teamData } from '../Components/data/DoctorsData';
@@ -11,7 +10,6 @@ import Footer from '../Layouts/Home/Footer';
 export default function Doctor() {
 	const { setActivePopup } = useContext(AppContext);
 	const params = useParams();
-	usePopup();
 
 	const { name, position, image, specialization, training } = teamData.filter(
 		(e) => e.name === params.name,

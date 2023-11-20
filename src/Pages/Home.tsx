@@ -1,4 +1,3 @@
-import usePopup from '../hooks/usePopup';
 import Header from '../Layouts/Home/Header';
 import Preview from '../Layouts/Home/Preview';
 import Service from '../Layouts/Home/Service';
@@ -9,7 +8,6 @@ import Team from '../Layouts/Home/Team';
 import Contacts from '../Layouts/Home/Contacts';
 
 export default function Home() {
-	usePopup();
 	return (
 		<div className="font-mont w-[100vw] bg-[#F6F7F9] z-[50]">
 			<div className='relative bg-[url("./assets/bg-preview.png")] bg-no-repeat bg-cover overflow-hidden'>

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import usePopup from '../hooks/usePopup';
 import Breadcrumbs from '../Components/Breadcrumbs';
 import Tab from '../Components/Tab';
 import { dataServices } from '../Components/data/ServiceData';
@@ -22,8 +21,6 @@ const dataTabs: DataTabsType[] = [
 
 export default function Services() {
 	const [currentTab, setCurrentTab] = useState(0);
-
-	usePopup();
 	return (
 		<div className="font-mont w-[100vw] bg-[#EDF0F4]">
 			<Header />

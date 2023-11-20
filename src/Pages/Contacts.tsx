@@ -3,10 +3,8 @@ import Title from '../Components/Titile';
 import Address from '../Components/Address';
 import Footer from '../Layouts/Home/Footer';
 import Header from '../Layouts/Home/Header';
-import usePopup from '../hooks/usePopup';
 
 export default function Contacts() {
-	usePopup();
 	return (
 		<div className="font-mont w-[100vw] bg-[#EDF0F4]">
 			<Header />

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import usePopup from '../hooks/usePopup';
 import Breadcrumbs from '../Components/Breadcrumbs';
 import Tab from '../Components/Tab';
 import DoctorCard from '../Components/doctorCard';
@@ -22,8 +21,6 @@ const dataTabs: DoctorsType[] = [
 
 export default function Doctors() {
 	const [currentTab, setCurrentTab] = useState('Все врачи');
-
-	usePopup();
 
 	return (
 		<div className="font-mont bg-[#EDF0F4]">

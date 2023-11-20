@@ -1,6 +1,5 @@
 import Footer from '../Layouts/Home/Footer';
 import Header from '../Layouts/Home/Header';
-import usePopup from '../hooks/usePopup';
 import History from '../Layouts/Clinic/History';
 import ClinicPromo from '../Layouts/Clinic/ClinicPromo';
 import Breadcrumbs from '../Components/Breadcrumbs';
@@ -8,7 +7,6 @@ import Title from '../Components/Titile';
 import ClinicImage from '../Components/clinicImage';
 
 export default function Clinic() {
-	usePopup();
 	return (
 		<div className="font-mont w-[100vw] bg-[#EDF0F4]">
 			<Header />
