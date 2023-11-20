@@ -8,7 +8,7 @@ type PortalMenu = {
 	setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-export default function PortalMenu({ isOpen, setIsOpen }: PortalMenu) {
+export default function PortalBurgerMenu({ isOpen, setIsOpen }: PortalMenu) {
 	const { setActivePopup } = useContext(AppContext);
 
 	useEffect(() => {

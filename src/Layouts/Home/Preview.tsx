@@ -8,7 +8,7 @@ export default function Preview() {
 					<span className="text-[#3563E9]">Многопрофильная</span> клиника мужского и женского
 					здоровья{' '}
 				</div>
-				<div className="mb-[36rem] w-full md:w-[557rem] text-[#242E49] text-[18rem] font-normal leading-[160%]">
+				<div className="mb-[36rem] w-full md:w-[557rem] text-[#242E49] text-[14rem] md:text-[18rem] font-normal leading-[160%]">
 					В нашей клинике вы можете быть уверены, что вас лечат специалисты, которым можно доверять.
 					Наша команда врачей имеет высокие профессиональные стандарты
 				</div>
