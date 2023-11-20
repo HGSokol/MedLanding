@@ -1,20 +1,69 @@
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+
+interface IFormInputs {
+	name: string;
+	phone: string;
+}
+
+const schema = yup
+	.object({
+		name: yup.string().required('Обязательное поле'),
+		phone: yup.string().required('Обязательное поле'),
+	})
+	.required();
 
 export default function Form() {
 	const [checkbox, setCheckbox] = useState(false);
+	const [name, setName] = useState('');
+	const [phone, setPhone] = useState('');
+
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+		reset,
+	} = useForm<IFormInputs>({
+		resolver: yupResolver(schema),
+		mode: 'onChange',
+	});
+
+	const onSubmit = (data: IFormInputs) => {};
 
 	return (
-		<form>
-			<input
-				placeholder="Имя*"
-				type="text"
-				className="mb-[12rem] md:mb-[24rem] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]"
-			/>
-			<input
-				placeholder="Телефон*"
-				type="text"
-				className="mb-[16rem] md:mb-[28rem] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]"
-			/>
+		<form onSubmit={handleSubmit(onSubmit)}>
+			<div className="relative mb-[12rem] md:mb-[24rem] ">
+				{!name && (
+					<label className="absolute left-[10rem] md:left-[16rem] top-[10rem] md:top-[15rem] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none">
+						Имя<span className="text-[#FF0000]">*</span>
+					</label>
+				)}
+				<input
+					{...(register('name'),
+					{
+						onChange: (e) => setName(e.target.value),
+					})}
+					type="text"
+					className="text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]"
+				/>
+			</div>
+			<div className="relative mb-[16rem] md:mb-[28rem] ">
+				{!phone && (
+					<label className="absolute left-[10rem] md:left-[16rem] top-[10rem] md:top-[15rem] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none">
+						Телефон<span className="text-[#FF0000]">*</span>
+					</label>
+				)}
+				<input
+					{...(register('name'),
+					{
+						onChange: (e) => setPhone(e.target.value),
+					})}
+					type="text"
+					className="text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]"
+				/>
+			</div>
 			<div className="flex flex-row gap-[12rem] mb-[16rem] md:mb-[28rem]">
 				<div
 					onClick={() => setCheckbox((prev) => !prev)}
