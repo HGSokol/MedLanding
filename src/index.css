@@ -44,7 +44,7 @@ body:has(#contactForm) {
 
 .burger {
   width: 35rem;
-  height: 4rem;
+  height: 3rem;
   border-radius: 10px;
   background-color: black;
   transform-origin: 1px;
