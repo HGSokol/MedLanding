@@ -8,7 +8,7 @@ import Header from '../Layouts/Home/Header';
 import Footer from '../Layouts/Home/Footer';
 
 export default function Doctor() {
-	const { setActivePopup } = useContext(AppContext);
+	const { setActivePopup, setDoctorName } = useContext(AppContext);
 	const params = useParams();
 
 	const { name, position, image, specialization, training } = teamData.filter(
@@ -29,7 +29,10 @@ export default function Doctor() {
 						alt={name}
 					/>
 					<div
-						onClick={() => setActivePopup(true)}
+						onClick={() => {
+							setDoctorName(name);
+							setActivePopup(true);
+						}}
 						className="w-full h-[38rem] md:h-[50rem] rounded-[8rem] flex items-center justify-center px-[20rem] duration-200 bg-[#3563E9] hover:bg-[#1941B9] text-[#FFF] text-[14rem] md:text-[16rem] font-semibold leading-[160%]">
 						Записаться
 					</div>

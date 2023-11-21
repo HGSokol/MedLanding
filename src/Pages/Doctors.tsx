@@ -25,32 +25,34 @@ export default function Doctors() {
 	return (
 		<div className="font-mont bg-[#EDF0F4]">
 			<Header />
-			<Breadcrumbs />
-			<DoctorsTitle />
-			<div className="px-[30rem] md:px-[95rem] flex flex-row flex-wrap gap-[10rem] mb-[30rem] md:mb-[60rem]">
-				{dataTabs.map((e, i) => {
-					const current = currentTab === e.name;
-					return (
-						<div onClick={() => setCurrentTab(e.name)} key={i}>
-							<Tab text={e.name} current={current} />
-						</div>
-					);
-				})}
-			</div>
-			<div className="px-[30rem] md:px-[95rem] flex flex-row flex-wrap gap-[25rem] mb-[30rem] md:mb-[100rem]">
-				{teamData
-					.filter((e) => {
-						if (currentTab === 'Все врачи') return e;
-						return e.department === currentTab;
-					})
-					.map((e, i) => {
+			<main className="md:min-h-[calc(100vh-102rem-340rem)]">
+				<Breadcrumbs />
+				<DoctorsTitle />
+				<div className="px-[30rem] md:px-[95rem] flex flex-row flex-wrap gap-[10rem] mb-[30rem] md:mb-[60rem]">
+					{dataTabs.map((e, i) => {
+						const current = currentTab === e.name;
 						return (
-							<div key={i} className="w-full md:w-[293rem]">
-								<DoctorCard name={e.name} position={e.position} image={e.image} />
+							<div onClick={() => setCurrentTab(e.name)} key={i}>
+								<Tab text={e.name} current={current} />
 							</div>
 						);
 					})}
-			</div>
+				</div>
+				<div className="px-[30rem] md:px-[95rem] flex flex-row flex-wrap gap-[25rem] mb-[30rem] md:mb-[100rem]">
+					{teamData
+						.filter((e) => {
+							if (currentTab === 'Все врачи') return e;
+							return e.department === currentTab;
+						})
+						.map((e, i) => {
+							return (
+								<div key={i} className="w-full md:w-[293rem]">
+									<DoctorCard name={e.name} position={e.position} image={e.image} />
+								</div>
+							);
+						})}
+				</div>
+			</main>
 			<Footer />
 		</div>
 	);

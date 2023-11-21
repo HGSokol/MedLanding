@@ -8,7 +8,7 @@ export default function Contacts() {
 	return (
 		<div className="font-mont w-[100vw] bg-[#EDF0F4]">
 			<Header />
-			<main className="min-h-[76vh]">
+			<main className="md:min-h-[calc(100vh-102rem-340rem)]">
 				<Breadcrumbs />
 				<Title
 					title="Контактные данные"

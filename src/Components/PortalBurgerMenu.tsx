@@ -54,7 +54,7 @@ export default function PortalBurgerMenu({ isOpen, setIsOpen }: PortalMenu) {
 				</div>
 				<div className="pt-[20rem] flex flex-col gap-[10rem]">
 					<div className=" text-[18rem] font-medium leading-[160%] text-[#FFF]">
-						+8 (495) 897-74-16
+						+8 (903) 799-30-30
 					</div>
 					<div
 						onClick={() => {

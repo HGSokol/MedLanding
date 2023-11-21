@@ -38,9 +38,9 @@ export default function Team() {
 					качественное медицинское обслуживание
 				</div>
 			</div>
-			<div className="overflow-x-scroll md:overflow-hidden snap-mandatory snap-x md:snap-none">
+			<div className="duration-[500ms] overflow-x-scroll md:overflow-hidden snap-mandatory snap-x md:snap-none">
 				<div
-					className="px-[30rem] md:px-[25rem] md:mb-[20rem] flex flex-row w-max gap-[12rem] md:gap-[25rem]"
+					className="duration-[500ms] px-[30rem] md:px-[25rem] md:mb-[20rem] flex flex-row w-max gap-[12rem] md:gap-[25rem]"
 					style={{
 						transform: `translateX(-${range * 320}rem)`,
 					}}>
@@ -66,7 +66,7 @@ export default function Team() {
 						currentSliderList === 0
 							? 'stroke-[#9FA8C0] fill-[#9FA8C0] border-[#9FA8C0]'
 							: 'stroke-[#242E49] hover:stroke-[#3563E9] fill-[#242E49] hover:fill-[#3563E9] hover:border-[#3563E9] cursor-pointer'
-					}  w-[55rem] h-[55rem] border-[1rem]  rounded-full p-[15rem]`}>
+					}  w-[55rem] h-[55rem] border-[1rem]  rounded-full p-[15rem] duration-[200ms]`}>
 					<svg
 						className="w-[24rem] h-[24rem] rotate-180"
 						xmlns="http://www.w3.org/2000/svg"

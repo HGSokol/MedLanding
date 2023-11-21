@@ -4,7 +4,7 @@ import Form from './Form';
 import SendResult from './SendResult';
 
 export default function ContactFormPopup() {
-	const { setActivePopup, send } = useContext(AppContext);
+	const { setActivePopup, send, setDoctorName, setServiceName } = useContext(AppContext);
 
 	return (
 		<>
@@ -20,7 +20,11 @@ export default function ContactFormPopup() {
 					</div>
 					<Form />
 					<div
-						onClick={() => setActivePopup(false)}
+						onClick={() => {
+							setDoctorName('');
+							setServiceName('');
+							setActivePopup(false);
+						}}
 						className="cursor-pointer absolute top-[15rem] md:top-[20rem] right-[20rem] md:right-[30rem]">
 						<svg
 							className="w-[30rem] h-[30rem]"

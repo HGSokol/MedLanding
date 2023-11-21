@@ -24,32 +24,34 @@ export default function Services() {
 	return (
 		<div className="font-mont w-[100vw] bg-[#EDF0F4]">
 			<Header />
-			<Breadcrumbs />
-			<PriceTitle />
-			<div className="px-[30rem] md:px-[95rem] flex flex-row flex-wrap gap-[10rem] mb-[30rem] md:mb-[60rem]">
-				{dataTabs.map((e, i) => {
-					const current = currentTab === i;
-					return (
-						<div onClick={() => setCurrentTab(i)} key={i}>
-							<Tab text={e.name} current={current} />
-						</div>
-					);
-				})}
-			</div>
-			<div className="flex flex-col gap-[30rem] md:gap-[50rem] mb-[50rem] md:mb-[100rem]">
-				{dataServices
-					.filter((e, i) => {
-						if (currentTab === 0) return e;
-						return i === currentTab - 1;
-					})
-					.map((e, i) => {
+			<main className="md:min-h-[calc(100vh-102rem-340rem)]">
+				<Breadcrumbs />
+				<PriceTitle />
+				<div className="px-[30rem] md:px-[95rem] flex flex-row flex-wrap gap-[10rem] mb-[30rem] md:mb-[60rem]">
+					{dataTabs.map((e, i) => {
+						const current = currentTab === i;
 						return (
-							<div key={i}>
-								<PriceInfo name={e.name} services={e.services} />
+							<div onClick={() => setCurrentTab(i)} key={i}>
+								<Tab text={e.name} current={current} />
 							</div>
 						);
 					})}
-			</div>
+				</div>
+				<div className="flex flex-col gap-[30rem] md:gap-[50rem] mb-[50rem] md:mb-[100rem]">
+					{dataServices
+						.filter((e, i) => {
+							if (currentTab === 0) return e;
+							return i === currentTab - 1;
+						})
+						.map((e, i) => {
+							return (
+								<div key={i}>
+									<PriceInfo name={e.name} services={e.services} />
+								</div>
+							);
+						})}
+				</div>
+			</main>
 			<Footer />
 		</div>
 	);

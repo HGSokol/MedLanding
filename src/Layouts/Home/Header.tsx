@@ -48,7 +48,7 @@ export default function Header() {
 				</div>
 			</div>
 			<div className="hidden md:flex flex-row gap-[36rem] font-semibold leading-[160%] items-center">
-				<div className="z-[10] text-[18rem] text-[#242E49]">+8 (495) 897-74-16</div>
+				<div className="z-[10] text-[18rem] text-[#242E49]">+8 (903) 799-30-30</div>
 				<div
 					onClick={() => setActivePopup(true)}
 					className="z-[10] text-[16rem] text-[white] flex items-center justify-center w-[230rem] h-[46rem] px-[20rem] duration-200 bg-[#3563E9] hover:bg-[#1941B9] rounded-[8rem] cursor-pointer">

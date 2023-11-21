@@ -33,7 +33,7 @@ export default function Contacts() {
 							Телефон:
 						</div>
 						<div className="text-[14rem] md:text-[18rem] text-[#3563E9] font-semibold leading-[160%]">
-							+7 (977) 897-74-16
+							+8 (903) 799-30-30
 						</div>
 					</div>
 					<div className="flex flex-col md:gap-[6rem]">

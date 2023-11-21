@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { AppContext } from '../App';
 
 export default function SendResult() {
-	const { setActivePopup, setSend } = useContext(AppContext);
+	const { setActivePopup, setSend, setDoctorName, setServiceName } = useContext(AppContext);
 	return (
 		<div className="relative mx-[10rem] w-[calc(100%-20rem)] md:w-[600rem] h-max md:h-[324rem] bg-[#F6F7F9] rounded-[12rem] md:rounded-[20rem] p-[30rem] md:p-[50rem] md:pt-[40rem] text-[#242E49] flex flex-col">
 			<div className="flex items-center justify-center">
@@ -127,6 +127,8 @@ export default function SendResult() {
 			</div>
 			<div
 				onClick={() => {
+					setDoctorName('');
+					setServiceName('');
 					setActivePopup(false);
 					setSend(false);
 				}}

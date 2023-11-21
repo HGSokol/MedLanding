@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { AppContext } from '../App';
 
 export default function Form() {
-	const { setSend, setActivePopup } = useContext(AppContext);
+	const { setSend, setActivePopup, doctorName, serviceName } = useContext(AppContext);
 
 	const [name, setName] = useState('');
 	const [nameError, setNameError] = useState(false);
@@ -34,12 +34,15 @@ export default function Form() {
 
 			// promise => setSend(true)
 			// close form, open result
-
+			const formData = {
+				name,
+				phone,
+				doctorName,
+				serviceName,
+			};
+			console.log(formData);
 			setSend(true);
 		}
-
-		console.log(name, phone, checkbox);
-		console.log(nameError, phoneError, checkboxError);
 	};
 
 	return (

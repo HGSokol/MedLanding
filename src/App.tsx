@@ -14,6 +14,10 @@ type ProfileContext = {
 	setActivePopup: Dispatch<SetStateAction<boolean>>;
 	send: boolean;
 	setSend: Dispatch<SetStateAction<boolean>>;
+	doctorName: string;
+	setDoctorName: Dispatch<SetStateAction<string>>;
+	serviceName: string;
+	setServiceName: Dispatch<SetStateAction<string>>;
 };
 
 const AppData: ProfileContext = {
@@ -21,14 +25,19 @@ const AppData: ProfileContext = {
 	setActivePopup: () => {},
 	send: false,
 	setSend: () => {},
+	doctorName: '',
+	setDoctorName: () => {},
+	serviceName: '',
+	setServiceName: () => {},
 };
 
 export const AppContext = createContext<ProfileContext>(AppData);
 
 export default function App() {
 	const [activePopup, setActivePopup] = useState(false);
-
 	const [send, setSend] = useState(false);
+	const [doctorName, setDoctorName] = useState('');
+	const [serviceName, setServiceName] = useState('');
 
 	return (
 		<AppContext.Provider
@@ -37,6 +46,10 @@ export default function App() {
 				setActivePopup,
 				send,
 				setSend,
+				doctorName,
+				setDoctorName,
+				serviceName,
+				setServiceName,
 			}}>
 			<Suspense fallback={<p>Loading...</p>}>
 				<Routes>

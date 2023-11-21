@@ -14,7 +14,7 @@ export default function History() {
 				</div>
 				<div className="flex flex-col md:gap-[6rem]">
 					<div className="font-bold leading-[160%]">Телефон</div>
-					<div className="text-[#3563E9] font-medium leading-[160%]">+7 (977) 897-74-16</div>
+					<div className="text-[#3563E9] font-medium leading-[160%]">+8 (903) 799-30-30</div>
 				</div>
 				<div className="flex flex-col md:gap-[6rem]">
 					<div className="font-bold leading-[160%]">Время работы call-центра</div>
