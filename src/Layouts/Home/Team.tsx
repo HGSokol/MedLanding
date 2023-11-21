@@ -62,7 +62,11 @@ export default function Team() {
 			<div className="hidden md:flex flex-row gap-[24rem] w-full items-center justify-center">
 				<div
 					onClick={left}
-					className="stroke-[#242E49] hover:stroke-[#3563E9] fill-[#242E49] hover:fill-[#3563E9] w-[55rem] h-[55rem] border-[1rem] hover:border-[#3563E9] rounded-full p-[15rem] cursor-pointer">
+					className={`${
+						currentSliderList === 0
+							? 'stroke-[#9FA8C0] fill-[#9FA8C0] border-[#9FA8C0]'
+							: 'stroke-[#242E49] hover:stroke-[#3563E9] fill-[#242E49] hover:fill-[#3563E9] hover:border-[#3563E9] cursor-pointer'
+					}  w-[55rem] h-[55rem] border-[1rem]  rounded-full p-[15rem]`}>
 					<svg
 						className="w-[24rem] h-[24rem] rotate-180"
 						xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +79,11 @@ export default function Team() {
 				</div>
 				<div
 					onClick={right}
-					className="stroke-[#242E49] hover:stroke-[#3563E9] fill-[#242E49] hover:fill-[#3563E9] w-[55rem] h-[55rem] border-[1rem] hover:border-[#3563E9] rounded-full p-[15rem] cursor-pointer">
+					className={`${
+						currentSliderList === teamData.length - 1
+							? 'stroke-[#9FA8C0] fill-[#9FA8C0] border-[#9FA8C0]'
+							: 'stroke-[#242E49] hover:stroke-[#3563E9] fill-[#242E49] hover:fill-[#3563E9] hover:border-[#3563E9] cursor-pointer'
+					} w-[55rem] h-[55rem] border-[1rem] rounded-full p-[15rem]`}>
 					<svg
 						className="w-[24rem] h-[24rem]"
 						xmlns="http://www.w3.org/2000/svg"

@@ -7,6 +7,7 @@ import PortalForm from '../../Components/PortalForm';
 export default function Header() {
 	const { activePopup, setActivePopup } = useContext(AppContext);
 	const [isOpen, setIsOpen] = useState(false);
+
 	return (
 		<header className="relative flex flex-row px-[30rem] md:px-[95rem] h-[80rem] md:h-[102rem] justify-between items-center w-[100%]">
 			<div className="flex flex-row items-center">
@@ -16,16 +17,32 @@ export default function Header() {
 					Логотип
 				</Link>
 				<div className="hidden md:flex flex-row gap-[40rem] text-[16rem] font-medium leading-[160%] text-[#242E49] duration-200">
-					<Link to="/services" className="z-[10] cursor-pointer hover:text-[#3563E9] duration-200">
+					<Link
+						to="/services"
+						className={`${
+							window.location.pathname.includes('/services') && 'text-[#3563E9]'
+						} z-[10] cursor-pointer  duration-200`}>
 						Услуги и цены
 					</Link>
-					<Link to="/doctors" className="z-[10] cursor-pointer hover:text-[#3563E9] duration-200">
+					<Link
+						to="/doctors"
+						className={`${
+							window.location.pathname.includes('/doctors') && 'text-[#3563E9]'
+						} z-[10] cursor-pointer hover:text-[#3563E9] duration-200`}>
 						Врачи
 					</Link>
-					<Link to="/clinic" className="z-[10] cursor-pointer hover:text-[#3563E9] duration-200">
+					<Link
+						to="/clinic"
+						className={`${
+							window.location.pathname.includes('/clinic') && 'text-[#3563E9]'
+						} z-[10] cursor-pointer hover:text-[#3563E9] duration-200`}>
 						Клиника
 					</Link>
-					<Link to="/contacts" className="z-[10] cursor-pointer hover:text-[#3563E9] duration-200">
+					<Link
+						to="/contacts"
+						className={`${
+							window.location.pathname.includes('/contacts') && 'text-[#3563E9]'
+						} z-[10] cursor-pointer hover:text-[#3563E9] duration-200`}>
 						Контакты
 					</Link>
 				</div>

@@ -4,7 +4,7 @@ import { AppContext } from '../App';
 import ContactFormPopup from './ContactFormPopup';
 
 export default function PortalForm() {
-	const { setActivePopup } = useContext(AppContext);
+	const { setActivePopup, setSend } = useContext(AppContext);
 
 	useEffect(() => {
 		document.addEventListener('click', closePopup);
@@ -18,6 +18,7 @@ export default function PortalForm() {
 
 		if (target.matches('#contactForm')) {
 			setActivePopup(false);
+			setSend(false);
 		}
 	}
 

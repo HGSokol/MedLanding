@@ -1,74 +1,101 @@
-import { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-
-interface IFormInputs {
-	name: string;
-	phone: string;
-}
-
-const schema = yup
-	.object({
-		name: yup.string().required('Обязательное поле'),
-		phone: yup.string().required('Обязательное поле'),
-	})
-	.required();
+import { useContext, useState } from 'react';
+import { AppContext } from '../App';
 
 export default function Form() {
-	const [checkbox, setCheckbox] = useState(false);
+	const { setSend, setActivePopup } = useContext(AppContext);
+
 	const [name, setName] = useState('');
+	const [nameError, setNameError] = useState(false);
 	const [phone, setPhone] = useState('');
+	const [phoneError, setPhoneError] = useState(false);
+	const [checkbox, setCheckbox] = useState(false);
+	const [checkboxError, setCheckboxError] = useState(false);
 
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-		reset,
-	} = useForm<IFormInputs>({
-		resolver: yupResolver(schema),
-		mode: 'onChange',
-	});
+	const [isNameFocus, setIsNameFocus] = useState(false);
+	const [isPhoneFocus, setIsPhoneFocus] = useState(false);
 
-	const onSubmit = (data: IFormInputs) => {};
+	const onSubmit = () => {
+		if (!name) {
+			setNameError(true);
+		}
+		if (!phone) {
+			setPhoneError(true);
+		}
+		if (!checkbox) {
+			setCheckboxError(true);
+		}
+
+		if (name && phone && checkbox) {
+			setName('');
+			setPhone('');
+			setCheckbox(false);
+
+			// axios post
+
+			// promise => setSend(true)
+			// close form, open result
+
+			setSend(true);
+		}
+
+		console.log(name, phone, checkbox);
+		console.log(nameError, phoneError, checkboxError);
+	};
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form>
 			<div className="relative mb-[12rem] md:mb-[24rem] ">
-				{!name && (
-					<label className="absolute left-[10rem] md:left-[16rem] top-[10rem] md:top-[15rem] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none">
-						Имя<span className="text-[#FF0000]">*</span>
+				{!isNameFocus && !name && (
+					<label className="absolute left-[10rem] md:left-[16rem] top-[10rem] md:top-[15rem] text-[#5D6A85] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none">
+						Имя<span className="text-[#FF2525]">*</span>
 					</label>
 				)}
 				<input
-					{...(register('name'),
-					{
-						onChange: (e) => setName(e.target.value),
-					})}
+					value={name}
+					onChange={(e) => {
+						setName(e.target.value);
+						setNameError(false);
+					}}
+					onFocus={() => setIsNameFocus(true)}
+					onBlur={() => setIsNameFocus(false)}
 					type="text"
-					className="text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]"
+					className={`${
+						nameError && 'bg-[#FF2525]/[0.05] border-[#FF2525] border-[1rem]'
+					} text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]`}
 				/>
 			</div>
 			<div className="relative mb-[16rem] md:mb-[28rem] ">
-				{!phone && (
-					<label className="absolute left-[10rem] md:left-[16rem] top-[10rem] md:top-[15rem] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none">
-						Телефон<span className="text-[#FF0000]">*</span>
+				{!isPhoneFocus && !phone && (
+					<label className="absolute left-[10rem] md:left-[16rem] top-[10rem] md:top-[15rem] text-[#5D6A85] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none">
+						Телефон<span className="text-[#FF2525]">*</span>
 					</label>
 				)}
 				<input
-					{...(register('name'),
-					{
-						onChange: (e) => setPhone(e.target.value),
-					})}
+					value={phone}
+					onChange={(e) => {
+						setPhone(e.target.value);
+						setPhoneError(false);
+					}}
+					onFocus={() => setIsPhoneFocus(true)}
+					onBlur={() => setIsPhoneFocus(false)}
 					type="text"
-					className="text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]"
+					className={`${
+						phoneError && 'bg-[#FF2525]/[0.05] border-[#FF2525] border-[1rem]'
+					} text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]`}
 				/>
 			</div>
 			<div className="flex flex-row gap-[12rem] mb-[16rem] md:mb-[28rem]">
 				<div
-					onClick={() => setCheckbox((prev) => !prev)}
-					className={`mr- cursor-pointer w-[16rem] md:w-[20rem] h-[16rem] md:h-[20rem] flex items-center justify-center rounded-[4rem] 
-          ${checkbox ? 'bg-[#3563E9]' : 'bg-white'}`}>
+					onClick={() => {
+						setCheckbox((prev) => !prev);
+						setCheckboxError(false);
+					}}
+					className={`${
+						checkbox ? 'bg-[#3563E9]' : checkboxError ? 'bg-[#FF2525]/[0.05]' : 'bg-white'
+					} ${
+						checkboxError && ' border-[#FF2525] border-[1rem]'
+					} cursor-pointer w-[16rem] md:w-[20rem] h-[16rem] md:h-[20rem] flex items-center justify-center rounded-[4rem] 
+					`}>
 					{checkbox && (
 						<div id="checkbox">
 							<svg
@@ -92,7 +119,14 @@ export default function Form() {
 				</div>
 			</div>
 			<button
-				type="submit"
+				onClick={() => {
+					if (name && phone && checkbox) {
+						setActivePopup(true);
+					}
+
+					onSubmit();
+				}}
+				type="button"
 				className="cursor-pointer w-full h-[40rem] md:h-[56rem] px-[20rem] flex items-center justify-center duration-200 bg-[#3563E9] hover:bg-[#1941B9] rounded-[8rem] text-[12rem] md:text-[16rem] text-[#FFF] font-semibold leading-[160%] ">
 				Записаться на прием
 			</button>
