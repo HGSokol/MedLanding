@@ -81,7 +81,7 @@ const data: ReviewsType[] = [
 
 export default function Reviews() {
 	return (
-		<div className="relative pt-[50rem] mb:pt-[0rem] px-[30rem] md:px-[185rem] flex flex-col mb-[50rem] md:mb-[150rem]">
+		<div className="relative pt-[50rem] mb:pt-[0rem] px-[16rem] md:px-[185rem] flex flex-col mb-[50rem] md:mb-[150rem]">
 			<div className="mb-[10rem] md:mb-[60rem] md:px-[50rem] md:text-center text-[28rem] md:text-[36rem] font-bold leading-[160%] md:leading-[56rem] md:tracking-[-0.72rem]">
 				<span className="text-[#3563E9]">Отзывы пациентов</span> об обслуживании и лечении в нашей
 				клинике

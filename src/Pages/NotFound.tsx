@@ -4,9 +4,9 @@ import Footer from '../Layouts/Home/Footer';
 
 export default function NotFound() {
 	return (
-		<div className="relative flex flex-col justify-between min-h-[100vh] font-mont bg-[#EDF0F4]">
+		<div className="relative flex flex-col justify-between min-h-[100dvh] font-mont bg-[#EDF0F4]">
 			<Header />
-			<main className="flex flex-col items-center md:items-start md:flex-row  mb-[30rem] md:mb-[58rem] mt-[30rem] md:mt-[92rem] px-[30rem] md:px-[102rem]">
+			<main className="flex flex-col items-center md:items-start md:flex-row  mb-[30rem] md:mb-[58rem] mt-[30rem] md:mt-[92rem] px-[16rem] md:px-[102rem]">
 				<div className="md:mr-[110rem]">
 					<svg
 						className="w-[270rem] h-[320rem] md:w-[467rem] md:h-[529rem]"

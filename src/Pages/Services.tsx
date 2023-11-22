@@ -24,10 +24,10 @@ export default function Services() {
 	return (
 		<div className="font-mont w-[100vw] bg-[#EDF0F4]">
 			<Header />
-			<main className="md:min-h-[calc(100vh-102rem-340rem)]">
+			<main className="md:min-h-[calc(100dvh-102rem-340rem)]">
 				<Breadcrumbs />
 				<PriceTitle />
-				<div className="px-[30rem] md:px-[95rem] flex flex-row flex-wrap gap-[10rem] mb-[30rem] md:mb-[60rem]">
+				<div className="px-[16rem] md:px-[95rem] flex flex-row flex-wrap gap-[10rem] mb-[30rem] md:mb-[60rem]">
 					{dataTabs.map((e, i) => {
 						const current = currentTab === i;
 						return (

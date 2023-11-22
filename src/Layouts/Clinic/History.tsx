@@ -4,7 +4,7 @@ import image1 from '../../assets/historyClinic.png';
 export default function History() {
 	const isMobile = window.innerWidth > 768 ? 475 : 210;
 	return (
-		<div className="px-[30rem] md:px-[95rem] md:mb-[120rem] flex flex-col md:flex-row gap-[30rem] md:gap-[60rem]">
+		<div className="px-[16rem] md:px-[95rem] md:mb-[120rem] flex flex-col md:flex-row gap-[30rem] md:gap-[60rem]">
 			<div className="md:pb-[50rem] md:sticky md:top-[30rem] h-full w-full md:w-[400rem] flex flex-col gap-[12rem] md:gap-[40rem] text-[12rem] md:text-[16rem]">
 				<div className="flex flex-col md:gap-[6rem]">
 					<div className="font-bold leading-[160%]">Адрес</div>

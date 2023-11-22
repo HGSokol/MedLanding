@@ -2,7 +2,7 @@ import ClinicImage from '../../Components/clinicImage';
 
 export default function Clinic() {
 	return (
-		<div className="relative px-[30rem] md:px-[95rem] pt-[50rem] md:pt-[90rem] flex flex-col mb-[10rem] md:mb-[150rem]">
+		<div className="relative px-[16rem] md:px-[95rem] pt-[50rem] md:pt-[90rem] flex flex-col mb-[10rem] md:mb-[150rem]">
 			<div className="flex flex-col md:flex-row gap-[8rem] md:gap-[0rem] justify-between mb-[30rem] md:mb-[60rem]">
 				<div className="w-full md:w-[621rem] text-[22rem] md:text-[36rem] font-bold leading-[150%] md:leading-[56rem] md:tracking-[-0.72rem]">
 					<span className="text-[#3563E9]">Наша клиника</span> - это место, где забота о вашем

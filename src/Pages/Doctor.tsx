@@ -21,7 +21,7 @@ export default function Doctor() {
 		<div className="font-mont bg-[#EDF0F4]">
 			<Header />
 			<Breadcrumbs />
-			<div className="px-[30rem] md:px-[95rem] mb-[40rem] md:mb-[100rem] flex flex-col md:flex-row gap-[20rem] md:gap-[60rem]">
+			<div className="px-[16rem] md:px-[95rem] mb-[40rem] md:mb-[100rem] flex flex-col md:flex-row gap-[20rem] md:gap-[60rem]">
 				<div className="w-full md:w-[334rem] flex flex-col gap-[18rem] md:gap-[36rem]">
 					<img
 						className="w-full md:w-[334rem] h-[250rem] md:h-[372rem] rounded-[14rem] object-cover object-top"

@@ -2,7 +2,7 @@ import { YMaps, Map } from '@pbe/react-yandex-maps';
 
 export default function Address({ height }: { height: string }) {
 	return (
-		<div className="px-[30rem] md:px-[95rem] mb-[25rem] md:mb-[100rem] flex flex-col gap-[30rem] md:gap-[40rem]">
+		<div className="px-[16rem] md:px-[95rem] mb-[25rem] md:mb-[100rem] flex flex-col gap-[30rem] md:gap-[40rem]">
 			<div className="flex flex-col md:flex-row gap-[15rem] md:gap-[0rem] justify-start md:justify-between text-[14rem] md:text-[18rem]">
 				<div>
 					<div className="md:mb-[10rem] text-[14rem] md: font-semibold leading-[160%]">Адрес</div>

@@ -40,7 +40,7 @@ export default function Team() {
 			</div>
 			<div className="duration-[500ms] overflow-x-scroll md:overflow-hidden snap-mandatory snap-x md:snap-none">
 				<div
-					className="duration-[500ms] px-[30rem] md:px-[25rem] md:mb-[20rem] flex flex-row w-max gap-[12rem] md:gap-[25rem]"
+					className="duration-[500ms] px-[16rem] md:px-[25rem] md:mb-[20rem] flex flex-row w-max gap-[12rem] md:gap-[25rem]"
 					style={{
 						transform: `translateX(-${range * 320}rem)`,
 					}}>

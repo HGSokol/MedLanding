@@ -3,7 +3,7 @@ import { YMaps, Map } from '@pbe/react-yandex-maps';
 export default function Contacts() {
 	const isMobile = window.innerWidth > 768 ? 511 : 210;
 	return (
-		<div className="relative px-[30rem] md:px-[95rem] mb-[50rem] md:mb-[150rem] gap-[25rem] md:gap-[0rem] flex flex-col-reverse md:flex-row">
+		<div className="relative px-[16rem] md:px-[95rem] mb-[50rem] md:mb-[150rem] gap-[25rem] md:gap-[0rem] flex flex-col-reverse md:flex-row">
 			<div className="md:mr-[107rem]">
 				<YMaps>
 					<div className="rounded-[12rem] md:rounded-[22rem] overflow-hidden">

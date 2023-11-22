@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function Preview() {
 	return (
-		<div className="relative px-[30rem] md:px-[95rem] pt-[30rem] md:pt-[100rem] flex flex-col md:flex-row">
+		<div className="relative px-[16rem] md:px-[95rem] pt-[30rem] md:pt-[100rem] flex flex-col md:flex-row">
 			<div className="flex flex-col items-center md:block">
 				<div className="text-[28rem] md:text-[48rem] font-bold leading-[120%] w-full md:w-[735rem] mb-[10rem] md:mb-[34rem]">
 					<span className="text-[#3563E9]">Многопрофильная</span> клиника мужского и женского
