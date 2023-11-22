@@ -23,9 +23,9 @@ export default function Doctors() {
 	const [currentTab, setCurrentTab] = useState('Все врачи');
 
 	return (
-		<div className="font-mont bg-[#EDF0F4]">
+		<div className="font-mont flex flex-col min-h-[100dvh] bg-[#EDF0F4]">
 			<Header />
-			<main className="md:min-h-[calc(100dvh-102rem-340rem)]">
+			<main className="grow-[3]">
 				<Breadcrumbs />
 				<DoctorsTitle />
 				<div className="px-[16rem] md:px-[95rem] flex flex-row flex-wrap gap-[10rem] mb-[30rem] md:mb-[60rem]">

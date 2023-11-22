@@ -6,9 +6,9 @@ import Header from '../Layouts/Home/Header';
 
 export default function Contacts() {
 	return (
-		<div className="font-mont w-[100vw] bg-[#EDF0F4]">
+		<div className="font-mont min-h-[100dvh] flex flex-col w-[100vw] bg-[#EDF0F4]">
 			<Header />
-			<main className="md:min-h-[calc(100dvh-102rem-340rem)]">
+			<main className="grow-[3]">
 				<Breadcrumbs />
 				<Title
 					title="Контактные данные"

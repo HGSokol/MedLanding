@@ -4,26 +4,26 @@ import { ServiceCardType } from '../Layouts/Home/Service';
 export default function ServiceCard({ title, description, image }: ServiceCardType) {
 	return (
 		<div
-			className={`group/ser overflow-hidden relative flex flex-col justify-between w-full md:w-[400rem] h-[190rem] md:h-[260rem] px-[15rem] md:px-[26rem] pt-[15rem] md:pt-[26rem] pb-[14rem] md:pb-[24rem] bg-[#EDF0F4] ${
+			className={`group/ser overflow-hidden relative flex flex-col justify-between w-full md:w-[400rem] h-[292rem] md:h-[260rem] px-[26rem] pt-[26rem] pb-[26rem] md:pb-[24rem] bg-[#EDF0F4] ${
 				image && ' hover:bg-gradient-service'
-			} rounded-[12rem] md:rounded-[20rem] service`}>
+			} rounded-[20rem] service`}>
 			<div
 				className={`duration-[250ms] ${
 					image ? 'md:w-[274rem]' : 'md:w-[348rem]'
 				} w-full flex flex-col gap-[12rem] text-[#242E49] duration-[250ms] ${
 					image && 'group-hover/ser:text-[#FFF]'
 				}`}>
-				<div className="text-[16rem] md:text-[24rem] font-bold leading-[160%]">{title}</div>
-				<div className="text-[12rem] md:text-[15rem] font-medium leading-[160%]">{description}</div>
+				<div className="text-[24rem] font-bold leading-[160%]">{title}</div>
+				<div className="text-[16rem] font-medium leading-[160%]">{description}</div>
 			</div>
 			{image ? (
 				<LinkButton />
 			) : (
-				<div className="w-full md:w-[195rem] cursor-pointer flex flex-row items-center text-[#3563E9] text-[12rem] md:text-[16rem] font-bold leading-[150%] md:tracking-[-0.32rem] duration-[500ms] gap-[10rem] hover:gap-[20rem]">
+				<div className="mt-[14rem] md:mt-[0rem] w-full md:w-[195rem] cursor-pointer flex flex-row items-center text-[#3563E9] text-[16rem] font-bold leading-[150%] md:tracking-[-0.32rem] duration-[500ms] gap-[10rem] hover:gap-[20rem]">
 					<div>Узнать больше</div>
 					<div className="rotate-45">
 						<svg
-							className="w-[16rem] md:w-[24rem] h-[16rem] md:h-[24rem]"
+							className="w-[24rem] h-[24rem]"
 							width="24"
 							height="24"
 							viewBox="0 0 24 24"
@@ -38,7 +38,7 @@ export default function ServiceCard({ title, description, image }: ServiceCardTy
 					</div>
 				</div>
 			)}
-			<div className="z-[10] absolute translate-x-[90rem] md:translate-x-[140rem] -translate-y-[30rem] md:-translate-y-[20rem]">
+			<div className="z-[10] absolute translate-x-[90rem] md:translate-x-[140rem] bottom-0 md:-translate-y-[20rem]">
 				{image && <img src={image} alt={image} className="w-[233rem] h-[260rem]" />}
 			</div>
 		</div>

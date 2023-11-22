@@ -46,12 +46,12 @@ const data: ServiceCardType[] = [
 
 export default function Service() {
 	return (
-		<div className="relative px-[16rem] md:px-[95rem] pt-[30rem] md:pt-[90rem] flex flex-col gap-[20rem] md:gap-[46rem] mb-[50rem] md:mb-[150rem]">
-			<div className="w-full md:w-[756rem] text-[22rem] md:text-[36rem] font-bold leading-[140%] md:leading-[56rem] tracking-[-0.72rem] text-[#242E49]">
+		<div className="relative px-[16rem] md:px-[95rem] pt-[65rem] md:pt-[90rem] flex flex-col gap-[30rem] md:gap-[46rem] mb-[70rem] md:mb-[150rem]">
+			<div className="w-full md:w-[756rem] text-[28rem] md:text-[36rem] font-bold leading-[140%] md:leading-[56rem] tracking-[-0.72rem] text-[#242E49]">
 				<span className="text-[#3563E9]">Наши услуги</span> - это высококачественное заботливое
 				обслуживание
 			</div>
-			<div className="flex flex-row flex-wrap w-full gap-[15rem] md:gap-[25rem]">
+			<div className="flex flex-row flex-wrap w-full gap-[16rem] md:gap-[25rem]">
 				{data.map((e, index) => (
 					<div key={index}>
 						<ServiceCard title={e.title} description={e.description} image={e.image} />

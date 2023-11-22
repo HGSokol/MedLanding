@@ -28,8 +28,8 @@ export default function Team() {
 	};
 
 	return (
-		<div className="relative mb-[20rem] md:mb-[150rem] flex flex-col justify-center overflow-hidden">
-			<div className="flex flex-col w-full items-center text-center gap-[18rem] mb-[60rem]">
+		<div className="relative mb-[70rem] md:mb-[150rem] flex flex-col justify-center overflow-hidden">
+			<div className="px-[16rem] md:px-[0rem] flex flex-col w-full items-center text-start md:text-center gap-[18rem] mb-[30rem] md:mb-[60rem]">
 				<div className="text-[28rem] md:text-[36rem] font-bold leading-[56rem] tracking-[-0.72rem]">
 					Наши специалисты
 				</div>

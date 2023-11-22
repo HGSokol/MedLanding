@@ -9,7 +9,7 @@ export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<header className="relative flex flex-row px-[16rem] md:px-[95rem] h-[80rem] md:h-[102rem] justify-between items-center w-[100%]">
+		<header className="relative flex flex-row px-[16rem] md:px-[95rem] h-[78rem] md:h-[102rem] justify-between items-center w-[100%]">
 			<div
 				onClick={() => setIsOpen((prev) => !prev)}
 				className="mr-[16rem] md:mr-[0rem] hamburger md:hidden">
@@ -67,11 +67,11 @@ export default function Header() {
 				</div>
 			</div>
 			<div className="flex flex-row gap-[36rem] font-semibold leading-[160%] items-center">
-				<div className="hidden z-[10] text-[18rem] text-[#242E49]">+8 (903) 799-30-30</div>
+				<div className="hidden md:block z-[10] text-[18rem] text-[#242E49]">+8 (903) 799-30-30</div>
 				<div
 					onClick={() => setActivePopup(true)}
 					className="z-[10] text-[16rem] text-[white] flex items-center justify-center md:w-[230rem] h-[46rem] px-[20rem] duration-200 bg-[#3563E9] hover:bg-[#1941B9] rounded-[8rem] cursor-pointer">
-					<span className="hidden">Записаться на прием</span>
+					<span className="hidden md:block">Записаться на прием</span>
 					<span className="md:hidden">Записаться</span>
 				</div>
 			</div>

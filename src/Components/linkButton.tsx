@@ -1,8 +1,8 @@
 export default function linkButton() {
 	return (
-		<div className="duration-[150ms] w-[40rem] md:w-[64rem] aspect-square flex items-center justify-center  md:p-[16rem] rounded-full bg-[#FFF] group-hover/ser:bg-[#FFF]/[20%]">
+		<div className="duration-[150ms] w-[64rem] aspect-square flex items-center justify-center  md:p-[16rem] rounded-full bg-[#FFF] group-hover/ser:bg-[#FFF]/[20%]">
 			<svg
-				className="duration-[150ms] w-[16rem] h-[16rem] md:w-[24rem] md:h-[24rem] fill-[#3563E9] stroke-[#3563E9] group-hover/ser:fill-[#FFF] group-hover/ser:stroke-[#FFF]"
+				className="duration-[150ms] w-[24rem] h-[24rem] fill-[#3563E9] stroke-[#3563E9] group-hover/ser:fill-[#FFF] group-hover/ser:stroke-[#FFF]"
 				width="24"
 				height="24"
 				viewBox="0 0 24 24"

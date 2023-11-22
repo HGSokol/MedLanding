@@ -22,9 +22,9 @@ const dataTabs: DataTabsType[] = [
 export default function Services() {
 	const [currentTab, setCurrentTab] = useState(0);
 	return (
-		<div className="font-mont w-[100vw] bg-[#EDF0F4]">
+		<div className="font-mont flex flex-col min-h-[100dvh] w-[100vw] bg-[#EDF0F4]">
 			<Header />
-			<main className="md:min-h-[calc(100dvh-102rem-340rem)]">
+			<main className="grow-[3]">
 				<Breadcrumbs />
 				<PriceTitle />
 				<div className="px-[16rem] md:px-[95rem] flex flex-row flex-wrap gap-[10rem] mb-[30rem] md:mb-[60rem]">

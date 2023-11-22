@@ -2,22 +2,22 @@ import ClinicImage from '../../Components/clinicImage';
 
 export default function Clinic() {
 	return (
-		<div className="relative px-[16rem] md:px-[95rem] pt-[50rem] md:pt-[90rem] flex flex-col mb-[10rem] md:mb-[150rem]">
+		<div className="relative px-[16rem] md:px-[95rem] md:pt-[90rem] flex flex-col mb-[70rem] md:mb-[150rem]">
 			<div className="flex flex-col md:flex-row gap-[8rem] md:gap-[0rem] justify-between mb-[30rem] md:mb-[60rem]">
-				<div className="w-full md:w-[621rem] text-[22rem] md:text-[36rem] font-bold leading-[150%] md:leading-[56rem] md:tracking-[-0.72rem]">
+				<div className="w-full md:w-[621rem] text-[28rem] md:text-[36rem] font-bold leading-[150%] md:leading-[56rem] md:tracking-[-0.72rem]">
 					<span className="text-[#3563E9]">Наша клиника</span> - это место, где забота о вашем
 					здоровье на первом месте.
 				</div>
-				<div className="w-full md:w-[544rem] pt-[10rem] flex flex-col gap-[10rem] md:gap-[22rem] ">
-					<div className="text-[#5D6A85] text-[14rem] md:text-[18rem] font-medium leading-[160%]">
+				<div className="w-full md:w-[544rem] pt-[30rem] flex flex-col gap-[18rem] md:gap-[22rem] ">
+					<div className="text-[#5D6A85] text-[18rem] font-medium leading-[160%]">
 						Здесь вы найдете высококачественную медицинскую помощь и дружелюбную атмосферу, которая
 						поможет вам почувствовать себя комфортно и уверенно на пути к выздоровлению.{' '}
 					</div>
-					<div className="w-full md:w-[195rem] cursor-pointer flex flex-row items-center text-[#3563E9] text-[12rem] md:text-[16rem] font-semibold leading-[150%] tracking-[-0.32rem] duration-200 gap-[10rem] hover:gap-[20rem]">
+					<div className="w-full md:w-[195rem] cursor-pointer flex flex-row items-center text-[#3563E9] text-[16rem] font-semibold leading-[150%] tracking-[-0.32rem] duration-200 gap-[10rem] hover:gap-[20rem]">
 						<div>Узнать больше</div>
 						<div className="rotate-45">
 							<svg
-								className="w-[16rem] md:w-[23rem] h-[16rem] md:h-[23rem]"
+								className="w-[23rem] h-[23rem]"
 								width="24"
 								height="24"
 								viewBox="0 0 24 24"
