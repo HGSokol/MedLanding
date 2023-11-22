@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { AppContext } from '../App';
 import { TeamCardType } from '../@types/appType';
 
@@ -8,9 +8,26 @@ type TeamCardExtendType = Pick<TeamCardType, 'image' | 'name' | 'position'> & {
 
 export default function TeamCard({ image, name, position, currentSlider }: TeamCardExtendType) {
 	const { setActivePopup, setDoctorName } = useContext(AppContext);
+	const currentRef = useRef<HTMLDivElement | null>(null);
+
+	const callback = () => {
+		console.log(`#${name}${currentSlider}`);
+	};
+	const options = {
+		threshold: 1.0,
+	};
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(callback, options);
+		if (currentRef.current) observer.observe(currentRef.current);
+
+		return () => {
+			if (currentRef.current) observer.observe(currentRef.current);
+		};
+	}, [options, currentRef]);
 
 	return (
-		<div className="flex flex-col gap-[10rem] md:gap-[22rem]">
+		<div ref={currentRef} className="flex flex-col gap-[10rem] md:gap-[22rem]">
 			<div>
 				<img className="w-[310rem] h-[345rem] object-cover object-top" src={image} alt={name} />
 			</div>
