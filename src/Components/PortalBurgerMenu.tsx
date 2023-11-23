@@ -27,7 +27,7 @@ export default function PortalBurgerMenu({ isOpen, setIsOpen }: PortalMenu) {
     <div
       id="portalMenu"
       className={`${
-        isOpen ? "z-[100] translate-x-0" : "z-[-1] -translate-x-[1000rem]"
+        isOpen ? "z-[500] translate-x-0" : "z-[-1] -translate-x-[1000rem]"
       } overflow-y-scroll md:hidden fixed top-0 w-full max-h-[100vh] duration-[300ms] delay-[300ms] text-[#242E49]`}
     >
       <div className="p-[16rem] flex flex-col w-full h-[100dvh] bg-[#EDF0F4] ">

@@ -1,6 +1,7 @@
-import { Dispatch, SetStateAction, useContext, useEffect, useRef } from "react";
+import { Dispatch, SetStateAction, useContext, useRef } from "react";
 import { AppContext } from "../App";
 import { TeamCardType } from "../@types/appType";
+import useObserver from "../hooks/useObserver";
 
 type TeamCardExtendType = Pick<TeamCardType, "image" | "name" | "position"> & {
   currentSlider: boolean;
@@ -15,29 +16,11 @@ export default function TeamCard({
   currentSlider,
   setActiveCircle,
   number,
-}: //   ,
-//   ,
-TeamCardExtendType) {
+}: TeamCardExtendType) {
   const { setActivePopup, setDoctorName } = useContext(AppContext);
   const currentRef = useRef<HTMLDivElement | null>(null);
 
-  const callback = () => {
-    setActiveCircle(number);
-  };
-  const options = {
-    root: document.body,
-    rootMargin: "0px",
-    threshold: 0.9,
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(callback, options);
-    if (currentRef.current) observer.observe(currentRef.current);
-
-    return () => {
-      if (currentRef.current) observer.observe(currentRef.current);
-    };
-  }, []);
+  useObserver(currentRef, number, setActiveCircle);
 
   return (
     <div ref={currentRef} className="flex flex-col gap-[10rem] md:gap-[22rem]">

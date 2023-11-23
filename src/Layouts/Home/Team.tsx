@@ -108,18 +108,18 @@ export default function Team() {
       <div className="md:hidden flex justify-center items-center pt-[10rem] gap-[6rem]">
         {teamData.map((_, i) => {
           return (
-            <>
+            <div key={i}>
               <svg
                 className={`w-[8rem] h-[8rem] 
-				${i === activeCircle ? "fill-[#3563E9] " : "fill-[#D0E4FF] "} 
-				`}
+                ${i === activeCircle ? "fill-[#3563E9] " : "fill-[#D0E4FF] "} 
+                `}
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 9 8"
                 fill="none"
               >
                 <circle cx="4.5" cy="4" r="4" />
               </svg>
-            </>
+            </div>
           );
         })}
       </div>

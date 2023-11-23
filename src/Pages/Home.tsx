@@ -11,7 +11,6 @@ export default function Home() {
   return (
     <div className="font-mont w-[100vw] bg-[#F6F7F9] z-[50]">
       <div className='relative bg-[url("./assets/bg-preview.png")] w-full h-full bg-no-repeat bg-cover bg-[center_top] md:bg-center overflow-hidden'>
-        {/* <div className="relative w-full h-full"> */}
         <div className="absolute right-[-31rem] md:right-auto bottom-0 md:bottom-auto md:translate-x-[650rem] md:-translate-y-[0rem]">
           <svg
             className="w-[495rem] md:w-[831rem] h-[495rem] md:h-[831rem]"
@@ -82,7 +81,6 @@ export default function Home() {
         <div className="absolute w-full h-full bg-gradient-radial"></div>
         <Header />
         <Preview />
-        {/* </div> */}
       </div>
       <main>
         <Service />
