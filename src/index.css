@@ -34,8 +34,8 @@ body:has(#contactForm) {
 
 /* burger menu */
 .hamburger {
-  width: 18rem;
-  height: 18rem;
+  width: 24rem;
+  height: 23rem;
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
@@ -43,8 +43,8 @@ body:has(#contactForm) {
 }
 
 .burger {
-  width: 18rem;
-  height: 1.5rem;
+  width: 24rem;
+  height: 2rem;
   /* border-radius: 10px; */
   background-color: black;
   transform-origin: 1rem;
