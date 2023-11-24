@@ -39,7 +39,7 @@ export default function Team() {
 					качественное медицинское обслуживание
 				</div>
 			</div>
-			<div className="duration-[500ms] overflow-x-scroll md:overflow-hidden snap-mandatory snap-x md:snap-none">
+			<div className="mb-[20rem] md:mb-[0rem] duration-[500ms] overflow-x-scroll md:overflow-hidden snap-mandatory snap-x md:snap-none">
 				<div
 					className="duration-[500ms] px-[16rem] md:px-[25rem] md:mb-[20rem] flex flex-row w-max gap-[25rem]"
 					style={{

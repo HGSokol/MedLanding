@@ -16,27 +16,31 @@ export default function Contacts() {
 				</YMaps>
 			</div>
 			<div className="md:pt-[54rem]">
-				<div className="mb-[30rem] md:mb-[40rem] text-[24rem] md:text-[36rem] font-bold leading-[56rem] tracking-[-0.72rem]">
+				<div className="mb-[30rem] md:mb-[40rem] text-[28rem] md:text-[36rem] font-bold leading-[56rem] tracking-[-0.72rem]">
 					Наши контакты
 				</div>
 				<div className="flex flex-col gap-[22rem] md:gap-[28rem]">
 					<div className="flex flex-col gap-[6rem]">
-						<div className="text-[18rem] text-[#242E49] font-medium leading-[160%]">Адрес:</div>
-						<div className="text-[18rem] text-[#242E49] font-semibold leading-[160%]">
+						<div className="text-[16rem] md:text-[18rem] text-[#242E49] font-medium leading-[160%]">
+							Адрес:
+						</div>
+						<div className="text-[16rem] md:text-[18rem] text-[#242E49] font-semibold leading-[160%]">
 							Москва, вн.тер.г. муниципальный округ Дорогомилово, Кутузовский пр-кт, д. 18, пом. 4/2
 						</div>
 					</div>
 					<div className="flex flex-col gap-[6rem]">
-						<div className="text-[18rem] text-[#242E49] font-medium leading-[160%]">Телефон:</div>
-						<div className="text-[18rem] text-[#3563E9] font-semibold leading-[160%]">
+						<div className="text-[16rem] md:text-[18rem] text-[#242E49] font-medium leading-[160%]">
+							Телефон:
+						</div>
+						<div className="text-[16rem] md:text-[18rem] text-[#3563E9] font-semibold leading-[160%]">
 							+8 (903) 799-30-30
 						</div>
 					</div>
 					<div className="flex flex-col gap-[6rem]">
-						<div className="text-[18rem] text-[#242E49] font-medium leading-[160%]">
+						<div className="text-[16rem] md:text-[18rem] text-[#242E49] font-medium leading-[160%]">
 							Время работы call-центра:
 						</div>
-						<div className="text-[18rem] text-[#242E49] font-semibold leading-[160%]">
+						<div className="text-[16rem] md:text-[18rem] text-[#242E49] font-semibold leading-[160%]">
 							Пн - Вс: с 7:00 до 22:00
 						</div>
 					</div>

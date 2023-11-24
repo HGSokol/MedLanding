@@ -31,7 +31,7 @@ export default function Services() {
 				<Breadcrumbs />
 				<PriceTitle />
 				<div className="px-[16rem] mb-[40rem] md:mb-[0rem] md:px-[95rem] flex flex-col md:flex-row md:justify-between">
-					<div className="mb-[10rem] min-h-[40rem] snap-mandatory snap-x md:mb-[60rem] flex flex-row overflow-scroll  gap-[10rem] ">
+					<div className="mb-[10rem] min-h-[50rem] snap-mandatory snap-x md:mb-[60rem] flex flex-row overflow-scroll  gap-[10rem] ">
 						{dataTabs.map((e, i) => {
 							const current = currentTab === i;
 							return (
