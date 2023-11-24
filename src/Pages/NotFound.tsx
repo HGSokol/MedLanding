@@ -6,7 +6,7 @@ export default function NotFound() {
 	return (
 		<div className="relative flex flex-col justify-between min-h-[100dvh] font-mont bg-[#EDF0F4]">
 			<Header />
-			<main className="flex flex-col items-center md:items-start md:flex-row  mb-[30rem] md:mb-[58rem] mt-[30rem] md:mt-[92rem] px-[16rem] md:px-[102rem]">
+			<main className="flex flex-col-reverse gap-[78rem] md:gap-[0rem] items-center md:items-start md:flex-row  mb-[70rem] md:mb-[58rem] mt-[30rem] md:mt-[92rem] px-[16rem] md:px-[102rem]">
 				<div className="md:mr-[110rem]">
 					<svg
 						className="w-[270rem] h-[320rem] md:w-[467rem] md:h-[529rem]"
@@ -127,18 +127,18 @@ export default function NotFound() {
 						</defs>
 					</svg>
 				</div>
-				<div className="flex flex-col mt-[15rem] md:mt-[68rem] items-center md:items-start">
-					<div className="mb-[15rem] md:mb-[30rem] text-[#242E49] text-center md:text-start text-[32rem] md:text-[56rem] font-bold leading-[160%]">
+				<div className="flex flex-col mt-[15rem] md:mt-[68rem] items-start">
+					<div className="mb-[20rem] md:mb-[30rem] text-[#242E49] text-start text-[34rem] md:text-[56rem] font-bold leading-[160%]">
 						Ошибка 404
 					</div>
-					<div className="w-full text-center md:text-start md:w-[570rem] mb-[25rem] md:mb-[50rem] text-[#242E49] text-[16rem] font-normal leading-[160%]">
+					<div className="w-full text-start md:w-[570rem] mb-[40rem] md:mb-[50rem] text-[#242E49] text-[16rem] font-normal leading-[160%]">
 						Запрашиваемая страница не существует, или мы временно не можем ее найти. Пожалуйста,
 						проверьте введенный URL или воспользуйтесь навигацией по сайту, чтобы найти интересующую
 						вас информацию.
 					</div>
 					<Link
 						to="/"
-						className="w-[201rem] h-[50rem] rounded-[8rem] bg-[#3563E9] flex items-center justify-center px-[20rem] text-[#FFF] text-[16rem] font-semibold leading-[150%] tracking-[-0.32rem]">
+						className="w-full h-[50rem] rounded-[8rem] bg-[#3563E9] flex items-center justify-center px-[20rem] text-[#FFF] text-[16rem] font-semibold leading-[150%] tracking-[-0.32rem]">
 						На главную
 					</Link>
 				</div>

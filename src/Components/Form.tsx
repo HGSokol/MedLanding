@@ -47,9 +47,9 @@ export default function Form() {
 
 	return (
 		<form>
-			<div className="relative mb-[12rem] md:mb-[24rem] ">
+			<div className="relative mb-[16rem] md:mb-[24rem] ">
 				{!isNameFocus && !name && (
-					<label className="absolute left-[10rem] md:left-[16rem] top-[10rem] md:top-[15rem] text-[#5D6A85] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none">
+					<label className="absolute left-[16rem] top-[14rem] text-[#5D6A85] text-[16rem] font-normal leading-[160%] outline-none">
 						Имя<span className="text-[#FF2525]">*</span>
 					</label>
 				)}
@@ -64,12 +64,12 @@ export default function Form() {
 					type="text"
 					className={`${
 						nameError && 'bg-[#FF2525]/[0.05] border-[#FF2525] border-[1rem]'
-					} text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]`}
+					} text-[16rem] font-normal leading-[160%] outline-none w-full h-[50rem] md:h-[56rem] rounded-[8rem] px-[16rem] py-[8rem]`}
 				/>
 			</div>
-			<div className="relative mb-[16rem] md:mb-[28rem] ">
+			<div className="relative mb-[22rem] md:mb-[28rem] ">
 				{!isPhoneFocus && !phone && (
-					<label className="absolute left-[10rem] md:left-[16rem] top-[10rem] md:top-[15rem] text-[#5D6A85] text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none">
+					<label className="absolute left-[16rem] top-[14rem] text-[#5D6A85] text-[16rem] font-normal leading-[160%] outline-none">
 						Телефон<span className="text-[#FF2525]">*</span>
 					</label>
 				)}
@@ -84,10 +84,10 @@ export default function Form() {
 					type="text"
 					className={`${
 						phoneError && 'bg-[#FF2525]/[0.05] border-[#FF2525] border-[1rem]'
-					} text-[12rem] md:text-[16rem] font-normal leading-[160%] outline-none w-full h-[38rem] md:h-[56rem] rounded-[8rem] px-[10rem] md:px-[16rem] py-[8rem]`}
+					} text-[16rem] font-normal leading-[160%] outline-none w-full h-[50rem] md:h-[56rem] rounded-[8rem] px-[16rem] py-[8rem]`}
 				/>
 			</div>
-			<div className="flex flex-row gap-[12rem] mb-[16rem] md:mb-[28rem]">
+			<div className="flex flex-row gap-[12rem] mb-[22rem] md:mb-[28rem]">
 				<div
 					onClick={() => {
 						setCheckbox((prev) => !prev);
@@ -97,12 +97,12 @@ export default function Form() {
 						checkbox ? 'bg-[#3563E9]' : checkboxError ? 'bg-[#FF2525]/[0.05]' : 'bg-white'
 					} ${
 						checkboxError && ' border-[#FF2525] border-[1rem]'
-					} cursor-pointer w-[16rem] md:w-[20rem] h-[16rem] md:h-[20rem] flex items-center justify-center rounded-[4rem] 
+					} cursor-pointer w-[20rem] h-[20rem] flex items-center justify-center rounded-[4rem] 
 					`}>
 					{checkbox && (
 						<div id="checkbox">
 							<svg
-								className="w-[8rem] h-[8rem] md:w-[12rem] md:h-[12rem]"
+								className="w-[12rem] h-[12rem]"
 								width="12"
 								height="12"
 								viewBox="0 0 12 12"
@@ -116,7 +116,7 @@ export default function Form() {
 						</div>
 					)}
 				</div>
-				<div className="w-[calc(90%-4rem)] md:w-[450rem] text-[10rem] md:text-[12rem] font-normal leading-[160%]">
+				<div className="w-[calc(90%-4rem)] md:w-[450rem] text-[12rem] font-normal leading-[160%]">
 					Нажимая кнопку «Записаться на прием», я даю согласие на обработку моих персональных
 					данных.
 				</div>
@@ -130,7 +130,7 @@ export default function Form() {
 					onSubmit();
 				}}
 				type="button"
-				className="cursor-pointer w-full h-[40rem] md:h-[56rem] px-[20rem] flex items-center justify-center duration-200 bg-[#3563E9] hover:bg-[#1941B9] rounded-[8rem] text-[12rem] md:text-[16rem] text-[#FFF] font-semibold leading-[160%] ">
+				className="cursor-pointer w-full h-[50rem] md:h-[56rem] px-[20rem] flex items-center justify-center duration-200 bg-[#3563E9] hover:bg-[#1941B9] rounded-[8rem] text-[16rem] text-[#FFF] font-semibold leading-[160%] ">
 				Записаться на прием
 			</button>
 		</form>

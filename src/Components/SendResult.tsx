@@ -4,8 +4,8 @@ import { AppContext } from '../App';
 export default function SendResult() {
 	const { setActivePopup, setSend, setDoctorName, setServiceName } = useContext(AppContext);
 	return (
-		<div className="relative mx-[10rem] w-[calc(100%-20rem)] md:w-[600rem] h-max md:h-[324rem] bg-[#F6F7F9] rounded-[12rem] md:rounded-[20rem] p-[30rem] md:p-[50rem] md:pt-[40rem] text-[#242E49] flex flex-col">
-			<div className="flex items-center justify-center">
+		<div className="relative mx-[16rem] md:mx-[0rem] w-[calc(100%-32rem)] md:w-[600rem] h-[324rem] bg-[#F6F7F9] rounded-[12rem] md:rounded-[20rem] px-[20rem] py-[40rem] md:px-[30rem] md:p-[50rem] md:pt-[40rem] text-[#242E49] flex flex-col">
+			<div className=" mb-[20rem] md:mb-[0rem] flex items-center justify-center">
 				<svg
 					className="w-[158rem] h-[120rem]"
 					width="158"
@@ -119,10 +119,10 @@ export default function SendResult() {
 					/>
 				</svg>
 			</div>
-			<div className="text-center text-[22rem] md:text-[30rem] font-bold leading-[160%] md:leading-[56rem] tracking-[-0.6rem] mb-[6rem]">
+			<div className="text-center text-[20rem] md:text-[30rem] font-bold leading-[160%] md:leading-[56rem] tracking-[-0.6rem] mb-[6rem]">
 				Заявка отправлена!
 			</div>
-			<div className="text-center text-[12rem] md:text-[16rem] font-medium leading-[160%] mb-[20rem] md:mb-[38rem]">
+			<div className="px-[10rem] md:px-[40rem] text-center text-[14rem] md:text-[16rem] font-medium leading-[160%] md:mb-[38rem]">
 				Спасибо! Мы получили ваши данные. Наш менеджер свяжется с вами в ближайшее время.
 			</div>
 			<div

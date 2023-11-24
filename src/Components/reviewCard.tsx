@@ -8,12 +8,8 @@ export default function ReviewCard({ name, date, image, text }: ReviewsType) {
 					<img src={image} alt="user" className="rounded-full w-[48rem] h-[48rem]" />
 				</div>
 				<div className="mr-[44rem] flex flex-col">
-					<div className="text-[14rem] md:text-[16rem] text-[#242E49] font-semibold leading-[160%]">
-						{name}
-					</div>
-					<div className="text-[12rem] md:text-[14rem] text-[#808A99] font-medium leading-[160%]">
-						{date}
-					</div>
+					<div className="text-[16rem] text-[#242E49] font-semibold leading-[160%]">{name}</div>
+					<div className="text-[14rem] text-[#808A99] font-medium leading-[160%]">{date}</div>
 				</div>
 				<div>
 					<svg
@@ -37,9 +33,7 @@ export default function ReviewCard({ name, date, image, text }: ReviewsType) {
 					</svg>
 				</div>
 			</div>
-			<div className="text-[14rem] md:text-[16rem] text-[#242E49] font-medium leading-[160%]">
-				{text}
-			</div>
+			<div className="text-[16rem] text-[#242E49] font-medium leading-[160%]">{text}</div>
 		</div>
 	);
 }

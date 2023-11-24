@@ -11,11 +11,11 @@ export default function ContactFormPopup() {
 			{send ? (
 				<SendResult />
 			) : (
-				<div className="relative mx-[10rem] w-[calc(100%-20rem)] md:w-[600rem] h-max md:h-[538rem] bg-[#F6F7F9] rounded-[12rem] md:rounded-[20rem] p-[30rem] md:p-[50rem] text-[#242E49] flex flex-col">
-					<div className="text-center text-[22rem] md:text-[30rem] font-bold leading-[160%] md:leading-[56rem] tracking-[-0.6rem] mb-[6rem]">
+				<div className="relative mx-[10rem] w-[calc(100%-20rem)] md:w-[600rem] h-[487rem] md:h-[538rem] bg-[#F6F7F9] rounded-[12rem] md:rounded-[20rem] px-[20rem] py-[40rem] md:p-[50rem] text-[#242E49] flex flex-col">
+					<div className="text-center text-[20rem] md:text-[30rem] font-bold leading-[160%] md:leading-[56rem] tracking-[-0.6rem] mb-[6rem]">
 						Запись на прием
 					</div>
-					<div className="text-center text-[12rem] md:text-[16rem] font-medium leading-[160%] mb-[20rem] md:mb-[38rem]">
+					<div className="px-[20rem] md:px-[0rem] text-center text-[14rem] md:text-[16rem] font-medium leading-[160%] mb-[30rem] md:mb-[38rem]">
 						Оставьте ваши контактные данные и наш менеджер свяжется с вами в ближайшее время
 					</div>
 					<Form />
@@ -25,7 +25,7 @@ export default function ContactFormPopup() {
 							setServiceName('');
 							setActivePopup(false);
 						}}
-						className="cursor-pointer absolute top-[15rem] md:top-[20rem] right-[20rem] md:right-[30rem]">
+						className="cursor-pointer absolute top-[20rem] right-[20rem] md:right-[30rem]">
 						<svg
 							className="w-[30rem] h-[30rem]"
 							width="30"

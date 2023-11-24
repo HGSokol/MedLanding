@@ -3,13 +3,13 @@ import ClinicImage from '../../Components/clinicImage';
 export default function Clinic() {
 	return (
 		<div className="relative px-[16rem] md:px-[95rem] md:pt-[90rem] flex flex-col mb-[70rem] md:mb-[150rem]">
-			<div className="flex flex-col md:flex-row gap-[8rem] md:gap-[0rem] justify-between mb-[30rem] md:mb-[60rem]">
+			<div className="flex flex-col md:flex-row gap-[30rem] md:gap-[0rem] justify-between mb-[30rem] md:mb-[60rem]">
 				<div className="w-full md:w-[621rem] text-[28rem] md:text-[36rem] font-bold leading-[150%] md:leading-[56rem] md:tracking-[-0.72rem]">
 					<span className="text-[#3563E9]">Наша клиника</span> - это место, где забота о вашем
 					здоровье на первом месте.
 				</div>
-				<div className="w-full md:w-[544rem] pt-[30rem] flex flex-col gap-[18rem] md:gap-[22rem] ">
-					<div className="text-[#5D6A85] text-[18rem] font-medium leading-[160%]">
+				<div className="w-full md:w-[544rem] md:pt-[30rem] flex flex-col gap-[18rem] md:gap-[22rem] ">
+					<div className="text-[#5D6A85] text-[16rem] md:text-[18rem] font-medium leading-[160%]">
 						Здесь вы найдете высококачественную медицинскую помощь и дружелюбную атмосферу, которая
 						поможет вам почувствовать себя комфортно и уверенно на пути к выздоровлению.{' '}
 					</div>

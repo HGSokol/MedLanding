@@ -12,7 +12,7 @@ export default function Clinic() {
 			<Header />
 			<Breadcrumbs />
 			<Title
-				title="Наша клиника “Клиника”"
+				title="Клиника “BIOchek”"
 				text="Здесь вы найдете полезную информацию о нашей клинике. Узнайте больше о том, как мы можем заботиться о вашем здоровье и благополучии"
 			/>
 			<div className="px-[16rem] md:px-[95rem] mb-[30rem] md:mb-[70rem]">

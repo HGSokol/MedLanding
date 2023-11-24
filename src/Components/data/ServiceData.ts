@@ -6,7 +6,7 @@ export const dataServices: DataServicesType[] = [
     services: [
       {
         serviceName: "Консультация акушера-гинеколона (первичная)",
-        price: "6 000 руб",
+        price: "60 000 руб",
       },
       {
         serviceName: "Консультация акушера-гинеколона (повторная)",
