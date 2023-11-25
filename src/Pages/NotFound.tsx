@@ -1,8 +1,12 @@
 import { Link } from 'react-router-dom';
 import Header from '../Layouts/Home/Header';
 import Footer from '../Layouts/Home/Footer';
+import useGoogleSheet from '../hooks/useGoogleSheet';
 
 export default function NotFound() {
+	const data = useGoogleSheet();
+	console.log(data);
+
 	return (
 		<div className="relative flex flex-col justify-between min-h-[100dvh] font-mont bg-[#EDF0F4]">
 			<Header />

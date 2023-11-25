@@ -1,5 +1,6 @@
-import { YMaps, Map } from '@pbe/react-yandex-maps';
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
 import image1 from '../../assets/historyClinic.png';
+import img from '../../assets/Im.svg';
 
 export default function History() {
 	const isMobile = window.innerWidth > 768 ? 475 : 210;
@@ -94,13 +95,23 @@ export default function History() {
 						под номером - 4. И пройти до автобусных остановок указанных на схеме. Конечная остановка
 						- Хабаровская улица 4.
 					</div>
+
 					<YMaps>
 						<div className="rounded-[8rem] md:rounded-[22rem] overflow-hidden">
 							<Map
 								width={'856rem'}
 								height={`${isMobile}rem`}
-								defaultState={{ center: [55.696757, 37.511697], zoom: 16 }}
-							/>
+								defaultState={{ center: [55.746922, 37.551465], zoom: 14, controls: [] }}>
+								<Placemark
+									geometry={[55.746922, 37.551465]}
+									options={{
+										iconLayout: 'default#image',
+										iconImageHref: img,
+										iconImageSize: [32, 32],
+										iconImageOffset: [-15, -20],
+									}}
+								/>
+							</Map>
 						</div>
 					</YMaps>
 				</div>

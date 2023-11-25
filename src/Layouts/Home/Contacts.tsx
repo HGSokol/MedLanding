@@ -1,4 +1,5 @@
-import { YMaps, Map } from '@pbe/react-yandex-maps';
+import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
+import img from '../../assets/Im.svg';
 
 export default function Contacts() {
 	const isMobile = window.innerWidth > 768 ? 511 : 210;
@@ -10,8 +11,17 @@ export default function Contacts() {
 						<Map
 							width={'652rem'}
 							height={`${isMobile}rem`}
-							defaultState={{ center: [55.696757, 37.511697], zoom: 16 }}
-						/>
+							defaultState={{ center: [55.746922, 37.551465], zoom: 14, controls: [] }}>
+							<Placemark
+								geometry={[55.746922, 37.551465]}
+								options={{
+									iconLayout: 'default#image',
+									iconImageHref: img,
+									iconImageSize: [32, 32],
+									iconImageOffset: [-15, -20],
+								}}
+							/>
+						</Map>
 					</div>
 				</YMaps>
 			</div>
