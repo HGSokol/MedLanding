@@ -22,7 +22,7 @@ export default function DoctorCard({
 				<div className="flex flex-col gap-[8rem] md:gap-[6rem] text-center">
 					<div
 						className={`text-[18rem] md:text-[14rem] font-semibold leading-[160%]
-						group-hover/doc:text-[#3563E9] text-[#242E49]
+						md:group-hover/doc:text-[#3563E9] text-[#242E49]
 					}`}>
 						{name}
 					</div>

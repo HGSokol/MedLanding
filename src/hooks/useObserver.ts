@@ -13,7 +13,6 @@ export default function useObserver(
 
   useEffect(() => {
     const observer = new IntersectionObserver((e) => {
-      console.log(e[0].isIntersecting);
       if (e[0].isIntersecting) {
         func(currentCircle);
       }

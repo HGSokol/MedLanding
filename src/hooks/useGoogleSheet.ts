@@ -13,7 +13,7 @@ export default function useGoogleSheet() {
 
         axios.get(csvUrl)  
             .then((response) => {
-                const parsedCsvData = parseCSV(response.data);        
+                const parsedCsvData = parseCSV(response.data);   
                 setCsvData(parsedCsvData);        
             })
             .catch((error) => {
@@ -22,17 +22,32 @@ export default function useGoogleSheet() {
     }
 
     function parseCSV(csvText: string) {
+        csvText = csvText.replace(/,\S/g, e => {
+            e.split('')
+            return `*~${e[1]}`
+        }).replace(/\"/g, '')
+
+        
         const rows = csvText.split(/\r?\n/); 
-        const headers = rows[0].split(','); 
         const data = [];        
         for (let i = 1; i < rows.length; i++) {
-            const rowData = rows[i].split(','); 
             const rowObject = {};
-            for (let j = 0; j < headers.length; j++) {
-                rowObject[headers[j]] = rowData[j];
+            const rowData = rows[i].split(`*~`)
+
+            if(rowData[0] !== '') {
+                rowObject[rowData[0]] = []
+                data.push(rowObject);
+            } else {
+                const currentObj = data[data.length-1]
+                const key = Object.keys(currentObj)[0]
+
+                currentObj[key].push({
+                    serviceName: rowData[1],
+                    price: rowData[2]
+                })
             }
-            data.push(rowObject);
         }
+
         return data;
     }
     return csvData;

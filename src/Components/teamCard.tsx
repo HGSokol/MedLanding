@@ -6,6 +6,7 @@ import useObserver from '../hooks/useObserver';
 type TeamCardExtendType = Pick<TeamCardType, 'image' | 'name' | 'position'> & {
 	currentSlider: boolean;
 	setActiveCircle: Dispatch<SetStateAction<number>>;
+	activeCircle: number;
 	number: number;
 };
 
@@ -14,6 +15,7 @@ export default function TeamCard({
 	name,
 	position,
 	currentSlider,
+	activeCircle,
 	setActiveCircle,
 	number,
 }: TeamCardExtendType) {
@@ -34,7 +36,7 @@ export default function TeamCard({
 			<div className="flex flex-col gap-[8rem] text-center">
 				<div
 					className={`duration-[500ms] text-[18rem] font-semibold leading-[160%] ${
-						currentSlider ? 'text-[#3563E9]' : 'text-[#242E49]'
+						currentSlider || activeCircle === number ? 'text-[#3563E9]' : 'text-[#242E49]'
 					}`}>
 					{name}
 				</div>

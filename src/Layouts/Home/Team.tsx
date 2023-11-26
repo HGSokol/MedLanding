@@ -55,6 +55,7 @@ export default function Team() {
 									image={e.image}
 									name={e.name}
 									position={e.position}
+									activeCircle={activeCircle}
 									setActiveCircle={setActiveCircle}
 								/>
 							</div>
