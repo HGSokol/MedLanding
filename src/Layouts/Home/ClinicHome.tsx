@@ -1,6 +1,6 @@
 import ClinicImage from '../../Components/clinicImage';
 
-export default function Clinic() {
+export default function ClinicHome() {
 	return (
 		<div className="relative px-[16rem] md:px-[95rem] md:pt-[90rem] flex flex-col mb-[70rem] md:mb-[150rem]">
 			<div className="flex flex-col md:flex-row gap-[30rem] md:gap-[0rem] justify-between mb-[30rem] md:mb-[60rem]">

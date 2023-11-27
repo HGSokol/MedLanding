@@ -15,7 +15,7 @@ export default function ServiceTab({ price, serviceName }: ServiceType) {
 				{serviceName}
 			</div>
 			<div className="text-[16rem]  whitespace-nowrap md:text-[20rem] font-medium leading-[160%]">
-				{price}
+				{price} руб
 			</div>
 		</div>
 	);

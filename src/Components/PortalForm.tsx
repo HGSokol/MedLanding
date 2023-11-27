@@ -11,6 +11,8 @@ export default function PortalForm() {
 		return () => {
 			document.removeEventListener('click', closePopup);
 		};
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	function closePopup(e: MouseEvent) {

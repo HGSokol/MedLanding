@@ -1,11 +1,24 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'; // Import Axios
 
+type ServiceType = {
+    serviceName: string,
+    price: string
+}
+
+export type ParseDataType = {
+    [key:string]: ServiceType[]
+}
+
 export default function useGoogleSheet() {
-    const [csvData, setCsvData] = useState([]);
+    const [data, setData] = useState<ParseDataType[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, serError] = useState(false);
 
     useEffect(() => {
-        fetchCSVData(); 
+        setLoading(true)
+        fetchCSVData();         
+   // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []); 
 
     function fetchCSVData () {
@@ -13,29 +26,35 @@ export default function useGoogleSheet() {
 
         axios.get(csvUrl)  
             .then((response) => {
-                const parsedCsvData = parseCSV(response.data);   
-                setCsvData(parsedCsvData);        
+                setLoading(false)
+                const parsedCsvData: ParseDataType[] = parseCSV(response.data); 
+                console.log(parsedCsvData);  
+                setData(parsedCsvData);        
             })
             .catch((error) => {
+                setLoading(false)
+                serError(true)
                 console.error('Error fetching CSV data:', error);
             });
     }
 
-    function parseCSV(csvText: string) {
+    function parseCSV(csvText: string): ParseDataType[] {
         csvText = csvText.replace(/,\S/g, e => {
             e.split('')
             return `*~${e[1]}`
+    //eslint-disable-next-line
         }).replace(/\"/g, '')
 
         
         const rows = csvText.split(/\r?\n/); 
-        const data = [];        
+        const data: ParseDataType[] = [];        
         for (let i = 1; i < rows.length; i++) {
             const rowObject = {};
             const rowData = rows[i].split(`*~`)
 
             if(rowData[0] !== '') {
-                rowObject[rowData[0]] = []
+                console.log(rowObject);
+                (rowObject as {[key:string]: []})[rowData[0]] = []
                 data.push(rowObject);
             } else {
                 const currentObj = data[data.length-1]
@@ -50,5 +69,5 @@ export default function useGoogleSheet() {
 
         return data;
     }
-    return csvData;
+    return [data, loading, error];
 }

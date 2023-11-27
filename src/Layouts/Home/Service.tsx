@@ -33,13 +33,13 @@ const data: ServiceCardType[] = [
 		image: image3,
 	},
 	{
-		title: 'Терапевтия',
+		title: 'Гастроэнтерология',
 		description: 'Ранняя диагностика и лечение заболеваний',
 		image: image4,
 	},
 	{
-		title: 'УЗИ-диагностика',
-		description: 'УЗИ во время беременности и другие виды диагностики',
+		title: 'Диагностика',
+		description: 'Проводим широкий спектр диагностики',
 		image: image5,
 	},
 ];

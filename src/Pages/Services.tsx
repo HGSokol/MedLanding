@@ -1,28 +1,31 @@
 import { useState } from 'react';
 import Breadcrumbs from '../Components/Breadcrumbs';
 import Tab from '../Components/Tab';
-import { dataServices } from '../Components/data/ServiceData';
+// import { dataServices } from '../Components/data/ServiceData';
 import Header from '../Layouts/Home/Header';
 import Footer from '../Layouts/Home/Footer';
 import PriceTitle from '../Layouts/Price/PriceTitle';
 import PriceInfo from '../Layouts/Price/PriceInfo';
+import useGoogleSheet, { ParseDataType } from '../hooks/useGoogleSheet';
 
 type DataTabsType = {
 	name: string;
 };
 const dataTabs: DataTabsType[] = [
 	{ name: 'Все услуги' },
-	{ name: 'Гинекология' },
 	{ name: 'Урология' },
+	{ name: 'Гинекология' },
 	{ name: 'Эндокринология' },
-	{ name: 'Терапия' },
-	{ name: 'УЗИ-диагностика' },
+	{ name: 'Гастроэнтерология' },
+	{ name: 'Диагностика' },
 ];
 
 export default function Services() {
 	const [currentTab, setCurrentTab] = useState(0);
 	const [isInputFocus, setIsInputFocus] = useState(false);
 	const [searchText, setSearchText] = useState('');
+
+	const [data, loading, error] = useGoogleSheet();
 
 	return (
 		<div className="font-mont flex flex-col min-h-[100dvh] w-full bg-[#EDF0F4]">
@@ -100,18 +103,37 @@ export default function Services() {
 					</div>
 				</div>
 				<div className="flex flex-col gap-[40rem] md:gap-[50rem] mb-[70rem] md:mb-[100rem]">
-					{dataServices
-						.filter((e, i) => {
-							if (currentTab === 0) return e;
-							return i === currentTab - 1;
-						})
-						.map((e, i) => {
-							return (
-								<div key={i}>
-									<PriceInfo name={e.name} services={e.services} searchText={searchText} />
-								</div>
-							);
-						})}
+					{loading ? (
+						<div className="text-center text-[14rem] leading-[160%] font-medium">
+							Загрузка данных
+						</div>
+					) : error ? (
+						<div className="text-center text-[14rem] leading-[160%] font-medium">
+							Ошибка загрузки данных
+						</div>
+					) : (
+						(data as ParseDataType[])
+							.filter((e) => {
+								const name = Object.keys(e)[0].toLowerCase();
+								const wordPart = dataTabs[currentTab]?.name.slice(0, 5);
+
+								if (currentTab === 0) return e;
+								if (name.includes(wordPart.toLowerCase())) {
+									return e;
+								}
+							})
+							.map((e, i) => {
+								// const nameService = [dataTabs[i]][0]?.name;
+								const name = Object.keys(e)[0];
+								const services = e[name];
+
+								return (
+									<div key={i}>
+										<PriceInfo name={name} services={services} searchText={searchText} />
+									</div>
+								);
+							})
+					)}
 				</div>
 			</main>
 			<Footer />
