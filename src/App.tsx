@@ -8,6 +8,8 @@ import {
 } from "react";
 import { Route, Routes } from "react-router-dom";
 
+import loading from "./assets/loading.svg";
+
 const Home = lazy(() => import("./Pages/Home"));
 const Services = lazy(() => import("./Pages/Services"));
 const Doctors = lazy(() => import("./Pages/Doctors"));
@@ -73,7 +75,13 @@ export default function App() {
         setCurrentTabService,
       }}
     >
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense
+        fallback={
+          <div className="w-[100vw] h-[100vh] flex items-center justify-center">
+            <img className="w-[50rem] h-[50rem]" src={loading} alt="loading" />
+          </div>
+        }
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />

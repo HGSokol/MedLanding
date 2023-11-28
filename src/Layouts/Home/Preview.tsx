@@ -16,7 +16,7 @@ export default function Preview() {
           профессиональные стандарты
         </div>
         <Link
-          to="/services"
+          to="/clinic"
           className="cursor-pointer duration-200 mb-[437rem] md:mb-[170rem] w-full md:w-[201rem] h-[50rem] px-[20rem] rounded-[8rem] border-[1px] border-[#242E49] hover:border-[#3563E9] flex items-center justify-center text-[16rem] md:text-[16rem] hover:text-[#3563E9] font-semibold leading-[150%] md:tracking-[-0.32rem]"
         >
           Узнать больше

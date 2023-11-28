@@ -94,6 +94,7 @@ export default function Form() {
           onFocus={() => setIsPhoneFocus(true)}
           onBlur={() => setIsPhoneFocus(false)}
           type="text"
+          inputMode="numeric"
           id="phoneInput"
           className={` ${
             phoneError && "bg-[#FF2525]/[0.05] border-[#FF2525] border-[1rem]"

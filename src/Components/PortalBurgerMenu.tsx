@@ -30,7 +30,7 @@ export default function PortalBurgerMenu({ isOpen, setIsOpen }: PortalMenu) {
         isOpen ? "z-[500] translate-x-0" : "z-[-1] -translate-x-[1000rem]"
       } overflow-y-scroll md:hidden fixed top-0 w-full max-h-[100vh] duration-[300ms] delay-[300ms] text-[#242E49]`}
     >
-      <div className="p-[16rem] flex flex-col w-full h-[100dvh] bg-[#EDF0F4] ">
+      <div className="p-[16rem] flex flex-col w-[100vw] h-[100dvh] bg-[#EDF0F4] ">
         <div className="flex h-[46rem] mb-[72rem] flex-row items-center justify-between">
           <div
             onClick={() => setIsOpen((prev) => !prev)}
