@@ -27,6 +27,8 @@ type ProfileContext = {
   setServiceName: Dispatch<SetStateAction<string>>;
   fixedHeader: boolean;
   setFixedHeader: Dispatch<SetStateAction<boolean>>;
+  currentTabService: number;
+  setCurrentTabService: Dispatch<SetStateAction<number>>;
 };
 
 const AppData: ProfileContext = {
@@ -40,6 +42,8 @@ const AppData: ProfileContext = {
   setServiceName: () => {},
   fixedHeader: false,
   setFixedHeader: () => {},
+  currentTabService: 0,
+  setCurrentTabService: () => {},
 };
 
 export const AppContext = createContext<ProfileContext>(AppData);
@@ -50,6 +54,7 @@ export default function App() {
   const [doctorName, setDoctorName] = useState("");
   const [serviceName, setServiceName] = useState("");
   const [fixedHeader, setFixedHeader] = useState(false);
+  const [currentTabService, setCurrentTabService] = useState(0);
 
   return (
     <AppContext.Provider
@@ -64,6 +69,8 @@ export default function App() {
         setServiceName,
         fixedHeader,
         setFixedHeader,
+        currentTabService,
+        setCurrentTabService,
       }}
     >
       <Suspense fallback={<p>Loading...</p>}>
