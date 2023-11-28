@@ -1,13 +1,14 @@
-import ServiceCard from "../../Components/serviceCard";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AppContext } from "../../App";
+import ServiceCard from "../../Components/ServiceCard";
+import { dataTabs } from "../../Components/data/DataTab";
+
 import image1 from "../../assets/gynecological.png";
 import image2 from "../../assets/hand-card.png";
 import image3 from "../../assets/back-card.png";
 import image4 from "../../assets/gloves-card.png";
 import image5 from "../../assets/tech-card.png";
-import { dataTabs } from "../../Pages/Services";
-import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { AppContext } from "../../App";
 
 export type ServiceCardType = {
   title: string;

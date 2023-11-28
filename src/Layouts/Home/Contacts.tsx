@@ -7,7 +7,7 @@ export default function Contacts() {
     <div className="relative px-[16rem] md:px-[95rem] mb-[70rem] md:mb-[150rem] gap-[25rem] md:gap-[0rem] flex flex-col-reverse md:flex-row">
       <div className="md:mr-[107rem]">
         <YMaps>
-          <div className="rounded-[12rem] md:rounded-[22rem] overflow-hidden">
+          <div className="rounded-[22rem] overflow-hidden">
             <Map
               width={"652rem"}
               height={`${isMobile}rem`}

@@ -1,25 +1,13 @@
 import { useContext, useState } from "react";
+import { AppContext } from "../App";
 import Breadcrumbs from "../Components/Breadcrumbs";
 import Tab from "../Components/Tab";
-// import { dataServices } from '../Components/data/ServiceData';
 import Header from "../Layouts/Home/Header";
 import Footer from "../Layouts/Home/Footer";
 import PriceTitle from "../Layouts/Price/PriceTitle";
 import PriceInfo from "../Layouts/Price/PriceInfo";
 import useGoogleSheet, { ParseDataType } from "../hooks/useGoogleSheet";
-import { AppContext } from "../App";
-
-type DataTabsType = {
-  name: string;
-};
-export const dataTabs: DataTabsType[] = [
-  { name: "Все услуги" },
-  { name: "Урология" },
-  { name: "Гинекология" },
-  { name: "Эндокринология" },
-  { name: "Гастроэнтерология" },
-  { name: "Диагностика" },
-];
+import { dataTabs } from "../Components/data/DataTab";
 
 export default function Services() {
   const { currentTabService, setCurrentTabService } = useContext(AppContext);

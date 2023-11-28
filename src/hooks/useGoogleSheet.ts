@@ -44,7 +44,6 @@ export default function useGoogleSheet() {
       .replace(/,\S/g, (e) => {
         e.split("");
         return `*~${e[1]}`;
-        //eslint-disable-next-line
       })
       .replace(/\"/g, "");
 

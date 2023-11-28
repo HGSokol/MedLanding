@@ -35,9 +35,9 @@ export default function TeamCard({
       </div>
       <div className="w-[343rem] md:w-[310rem] h-[70rem] flex flex-col gap-[8rem] text-center">
         <div
-          className={`duration-[500ms] text-[18rem] font-semibold leading-[160%] md:${
-            currentSlider ? "text-[#3563E9]" : "text-[#242E49]"
-          } ${activeCircle === number ? "text-[#3563E9]" : "text-[#242E49]"}`}
+          className={`duration-[500ms] text-[18rem] font-semibold leading-[160%] ${
+            currentSlider ? "md:text-[#3563E9] " : "md:text-[#242E49] "
+          } ${activeCircle === number ? "text-[#3563E9] " : "text-[#242E49] "}`}
         >
           {name}
         </div>

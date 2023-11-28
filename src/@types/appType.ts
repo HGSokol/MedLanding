@@ -20,3 +20,7 @@ export type DataServicesType = {
   name: string;
   services: ServiceType[];
 };
+
+export type DataTabsType = {
+  name: string;
+};

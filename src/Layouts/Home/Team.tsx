@@ -1,5 +1,5 @@
 import { useState } from "react";
-import TeamCard from "../../Components/teamCard";
+import TeamCard from "../../Components/TeamCard";
 import { teamData } from "../../Components/data/DoctorsData";
 
 export default function Team() {
@@ -32,7 +32,7 @@ export default function Team() {
 
   return (
     <div className="relative mb-[70rem] md:mb-[150rem] flex flex-col justify-center overflow-hidden">
-      <div className="px-[16rem] md:px-[0rem] flex flex-col w-full items-center text-start md:text-center gap-[18rem] mb-[30rem] md:mb-[60rem]">
+      <div className="px-[16rem] md:px-[0rem] flex flex-col w-full md:items-center text-start md:text-center gap-[18rem] mb-[30rem] md:mb-[60rem]">
         <div className="text-[28rem] md:text-[36rem] font-bold leading-[56rem] tracking-[-0.72rem]">
           Наши специалисты
         </div>
