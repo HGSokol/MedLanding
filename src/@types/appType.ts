@@ -7,6 +7,7 @@ export type TeamCardType = {
   image: string;
   name: string;
   position: string;
+  experience?: string;
   department: string;
   specialization: string;
   training: TrainingType[];

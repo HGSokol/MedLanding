@@ -11,24 +11,26 @@ export default function Doctor() {
 	const { setActivePopup, setDoctorName } = useContext(AppContext);
 	const params = useParams();
 
-	const { name, position, image, specialization, training } = teamData.filter(
+	const { name, position, image, specialization, training, experience } = teamData.filter(
 		(e) => e.name === params.name,
 	)[0];
 
 	const isMobile = window.innerWidth > 768 ? '360' : '240';
 
 	return (
-		<div className="font-mont bg-[#EDF0F4]">
+		<div className="font-mont bg-[#EDF0F4] ">
 			<Header />
 			<Breadcrumbs />
 			<div className="px-[16rem] md:px-[95rem] mb-[70rem] md:mb-[100rem] flex flex-col md:flex-row gap-[40rem] md:gap-[60rem]">
-				<div className="w-full md:w-[334rem] flex flex-col md:gap-[36rem]">
+				<div className="md:sticky md:top-[140rem] h-full w-full md:w-[334rem] flex flex-col md:gap-[36rem]">
 					<div className="md:hidden mb-[40rem]">
 						<div className="mb-[20rem] text-[26rem] font-bold leading-[140%]">{name}</div>
-						<div className="text-[16rem] text-[#5D6A85] font-normal leading-[160%]">{position}</div>
+						<div className="text-[16rem] text-[#5D6A85] font-normal leading-[160%]">{`${position}${
+							experience ? experience : ''
+						}`}</div>
 					</div>
 					<img
-						className="mb-[22rem] md:mb-[0rem] w-full md:w-[334rem] h-[345rem] md:h-[372rem] rounded-[16rem] object-cover object-top"
+						className="bg-[#DFE5ED] mb-[22rem] md:mb-[0rem] w-full md:w-[334rem] h-[345rem] md:h-[372rem] rounded-[16rem] object-cover object-bottom md:object-top"
 						src={image}
 						alt={name}
 					/>
@@ -47,15 +49,20 @@ export default function Doctor() {
 							{name}
 						</div>
 						<div className="text-[14rem] text-center md:text-start md:text-[16rem] font-normal leading-[160%]">
-							{position}
+							{`${position}${experience ? experience : ''}`}
 						</div>
 					</div>
-					<div>
-						<div className="mb-[14rem] md:mb-[24rem] text-[20rem] md:text-[24rem] font-semibold leading-[160%]">
-							Специализация
+					{specialization.length > 0 && (
+						<div>
+							<div className="mb-[14rem] md:mb-[24rem] text-[20rem] md:text-[24rem] font-semibold leading-[160%]">
+								Специализация
+							</div>
+							<div className="text-[16rem] font-normal leading-[160%] whitespace-pre-wrap">
+								{specialization}
+							</div>
 						</div>
-						<div className="text-[16rem] font-normal leading-[160%]">{specialization}</div>
-					</div>
+					)}
+
 					<div>
 						<div className="mb-[14rem] md:mb-[24rem] text-[20rem] md:text-[24rem] font-semibold leading-[160%]">
 							Обучение и повышение квалификации

@@ -41,7 +41,7 @@ export default function Breadcrumbs() {
 
 	return (
 		<div
-			className={`px-[16rem] md:px-[95rem] mt-[16rem] md:mt-[30rem] flex flex-row gap-[10rem] text-[14rem] md:text-[14rem] mb-[30rem] md:mb-[53rem]`}>
+			className={`overflow-hidden px-[16rem] md:px-[95rem] mt-[16rem] md:mt-[30rem] flex flex-row gap-[10rem] text-[14rem] md:text-[14rem] mb-[30rem] md:mb-[53rem]`}>
 			<Link to="/" className="">
 				Главная
 			</Link>

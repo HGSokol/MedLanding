@@ -131,14 +131,14 @@ export default function NotFound() {
 					<div className="mb-[20rem] md:mb-[30rem] text-[#242E49] text-start text-[34rem] md:text-[56rem] font-bold leading-[160%]">
 						Ошибка 404
 					</div>
-					<div className="w-full text-start md:w-[570rem] mb-[40rem] md:mb-[50rem] text-[#242E49] text-[16rem] font-normal leading-[160%]">
+					<div className="w-full text-start md:w-[633rem] mb-[40rem] md:mb-[50rem] text-[#242E49] text-[16rem] font-normal leading-[160%]">
 						Запрашиваемая страница не существует, или мы временно не можем ее найти. Пожалуйста,
 						проверьте введенный URL или воспользуйтесь навигацией по сайту, чтобы найти интересующую
 						вас информацию.
 					</div>
 					<Link
 						to="/"
-						className="w-full h-[50rem] rounded-[8rem] bg-[#3563E9] flex items-center justify-center px-[20rem] text-[#FFF] text-[16rem] font-semibold leading-[150%] tracking-[-0.32rem]">
+						className="w-full md:w-[201rem] h-[50rem] rounded-[8rem] bg-[#3563E9] flex items-center justify-center px-[20rem] text-[#FFF] text-[16rem] font-semibold leading-[150%] tracking-[-0.32rem]">
 						На главную
 					</Link>
 				</div>

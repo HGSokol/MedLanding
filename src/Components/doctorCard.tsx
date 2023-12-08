@@ -14,7 +14,7 @@ export default function DoctorCard({
 			<Link to={`/doctors/${name}`}>
 				<div className="mb-[22rem] md:mb-[18rem]">
 					<img
-						className="w-full md:w-[292rem] h-[345rem] md:h-[326rem] object-cover object-top rounded-[12rem]"
+						className="bg-[#DFE5ED] w-full md:w-[292rem] h-[345rem] md:h-[326rem] object-cover object-bottom md:object-top rounded-[12rem]"
 						src={image}
 						alt={name}
 					/>
