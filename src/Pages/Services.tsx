@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { AppContext } from '../App'
 import Breadcrumbs from '../Components/Breadcrumbs'
 import Tab from '../Components/Tab'
@@ -8,11 +8,14 @@ import PriceTitle from '../Layouts/Price/PriceTitle'
 import PriceInfo from '../Layouts/Price/PriceInfo'
 import useGoogleSheet, { ParseDataType } from '../hooks/useGoogleSheet'
 import { dataTabs } from '../Components/data/DataTab'
+import BackButton from '../Components/BackButton'
+import { ServiceType } from '../@types/appType'
 
 export default function Services() {
 	const { currentTabService, setCurrentTabService } = useContext(AppContext)
 	const [isInputFocus, setIsInputFocus] = useState(false)
 	const [searchText, setSearchText] = useState('')
+	const [visibleBackButton, setVisibleBackButton] = useState(false)
 
 	const [data, loading, error] = useGoogleSheet()
 
@@ -28,7 +31,7 @@ export default function Services() {
 		})
 		.map((e) => {
 			const name = Object.keys(e)[0]
-			const services = e[name]
+			const services = e[name] as ServiceType[]
 
 			const serviceLength = services.filter((e) => {
 				if (searchText.length > 0) {
@@ -44,8 +47,25 @@ export default function Services() {
 		})
 		.filter((e) => e !== false)
 
+	useEffect(() => {
+		document.addEventListener('scroll', () => {
+			window.scrollY > 1100
+				? setVisibleBackButton(true)
+				: setVisibleBackButton(false)
+		})
+
+		return () => {
+			document.addEventListener('scroll', () => {
+				window.scrollY > 1100
+					? setVisibleBackButton(true)
+					: setVisibleBackButton(false)
+			})
+		}
+	}, [])
+
 	return (
-		<div className="font-mont flex flex-col min-h-[100dvh] w-full bg-[#EDF0F4]">
+		<div className="relative font-mont flex flex-col min-h-[100dvh] w-full bg-[#EDF0F4]">
+			{visibleBackButton && <BackButton />}
 			<Header />
 			<main className="grow-[3]">
 				<Breadcrumbs />
@@ -147,9 +167,9 @@ export default function Services() {
 							Нет данных
 						</div>
 					) : (
-						filteredData.map((e, i) => {
+						(filteredData as ParseDataType[]).map((e, i) => {
 							const name = Object.keys(e)[0]
-							const services = e[name]
+							const services = e[name] as ServiceType[]
 
 							return (
 								<div
