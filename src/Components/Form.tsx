@@ -1,14 +1,15 @@
 import { useContext, useRef, useState } from "react";
 import InputMask from "react-input-mask";
 import { AppContext } from "../App";
+import axios from "axios";
 
 export default function Form() {
   const { setSend, setActivePopup, doctorName, serviceName } =
     useContext(AppContext);
 
-  const [name, setName] = useState("");
+  const [customerName, setCustomerName] = useState("");
   const [nameError, setNameError] = useState(false);
-  const [phone, setPhone] = useState("");
+  const [customerPhone, setCustomerPhone] = useState("");
   const [phoneError, setPhoneError] = useState(false);
   const [checkbox, setCheckbox] = useState(false);
   const [checkboxError, setCheckboxError] = useState(false);
@@ -19,28 +20,41 @@ export default function Form() {
   const inputNameRef = useRef<HTMLInputElement | null>(null);
 
   const onSubmit = () => {
-    if (!name) {
+    if (!customerName) {
       setNameError(true);
     }
-    if (!phone) {
+    if (!customerPhone) {
       setPhoneError(true);
     }
     if (!checkbox) {
       setCheckboxError(true);
     }
 
-    if (name && phone && checkbox) {
-      setName("");
-      setPhone("");
+    if (customerName && customerPhone && checkbox) {
+      setCustomerName("");
+      setCustomerPhone("");
       setCheckbox(false);
 
       const formData = {
-        name,
-        phone: phone.replace(/ /g, ""),
+        customerName,
+        customerPhone: customerPhone.replace(/ /g, ""),
         doctorName,
         serviceName,
       };
-      console.log(formData);
+
+      axios
+        .post("/api/customer/services", JSON.stringify(formData), {
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+        })
+        .then((response) => {
+          console.log("Response:", response.data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+
       setSend(true);
     }
   };
@@ -48,7 +62,7 @@ export default function Form() {
   return (
     <form>
       <div className="relative mb-[16rem] md:mb-[24rem] ">
-        {!isNameFocus && !name && (
+        {!isNameFocus && !customerName && (
           <label
             onClick={() => inputNameRef.current?.focus()}
             className="absolute left-[16rem] top-[14rem] text-[#5D6A85] text-[16rem] font-normal leading-[160%] outline-none"
@@ -58,9 +72,9 @@ export default function Form() {
         )}
         <input
           ref={inputNameRef}
-          value={name}
+          value={customerName}
           onChange={(e) => {
-            setName(e.target.value);
+            setCustomerName(e.target.value);
             setNameError(false);
           }}
           onFocus={() => setIsNameFocus(true)}
@@ -72,7 +86,7 @@ export default function Form() {
         />
       </div>
       <div className="relative mb-[22rem] md:mb-[28rem] ">
-        {!isPhoneFocus && !phone && (
+        {!isPhoneFocus && !customerPhone && (
           <label
             onClick={() => document.getElementById("phoneInput")?.focus()}
             className="absolute left-[16rem] top-[14rem] text-[#5D6A85] text-[16rem] font-normal leading-[160%] outline-none"
@@ -82,13 +96,13 @@ export default function Form() {
         )}
         <InputMask
           mask={`${
-            phone.slice(0, 2).includes("8")
+            customerPhone.slice(0, 2).includes("8")
               ? "9 ( 999 ) 999 - 99 - 99"
               : "+9 ( 999 ) 999 - 99 - 99"
           }`}
-          value={phone}
+          value={customerPhone}
           onChange={(e) => {
-            setPhone(e.target.value);
+            setCustomerPhone(e.target.value);
             setPhoneError(false);
           }}
           onFocus={() => setIsPhoneFocus(true)}
@@ -143,7 +157,7 @@ export default function Form() {
       </div>
       <button
         onClick={() => {
-          if (name && phone && checkbox) {
+          if (customerName && customerPhone && checkbox) {
             setActivePopup(true);
           }
 
